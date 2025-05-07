@@ -1,0 +1,795 @@
+{
+  "categories": [
+    {
+      "name": "E-commerce",
+      "pages": [
+        {
+          "domain": "amazon.com",
+          "urls": [
+            "https://www.amazon.com/",
+            "https://www.amazon.com/books",
+            "https://www.amazon.com/gp/bestsellers/",
+            "https://www.amazon.com/s?k=laptop",
+            "https://www.amazon.com/Amazon-Video/b?node=2858778011",
+            "https://www.amazon.com/gp/product/B07FZ8S74R"
+          ]
+        },
+        {
+          "domain": "ebay.com",
+          "urls": [
+            "https://www.ebay.com/b/Collectibles-Art/bn_7000259855",
+            "https://www.ebay.com/deals",
+            "https://www.ebay.com/e/fashiondeals/mens-watches",
+            "https://www.ebay.com/sch/i.html?_nkw=vintage+camera",
+            "https://www.ebay.com/help/selling/selling/start-selling-ebay?id=4081"
+          ]
+        },
+        {
+          "domain": "etsy.com",
+          "urls": [
+            "https://www.etsy.com/c/jewelry-and-accessories",
+            "https://www.etsy.com/featured/gift-ideas",
+            "https://www.etsy.com/search?q=handmade+pottery",
+            "https://www.etsy.com/c/home-and-living/home-decor",
+            "https://www.etsy.com/c/craft-supplies-and-tools"
+          ]
+        },
+        {
+          "domain": "walmart.com",
+          "urls": [
+            "https://www.walmart.com/cp/grocery/976759",
+            "https://www.walmart.com/browse/electronics/tvs/3944_1060825_447913",
+            "https://www.walmart.com/cp/patio-garden/5428",
+            "https://www.walmart.com/cp/pharmacy/5431",
+            "https://www.walmart.com/browse/clothing/women/5438_133162"
+          ]
+        },
+        {
+          "domain": "aliexpress.com",
+          "urls": [
+            "https://www.aliexpress.com/category/200003482/dresses.html",
+            "https://www.aliexpress.com/category/200002394/phones.html",
+            "https://www.aliexpress.com/category/44/consumer-electronics.html",
+            "https://www.aliexpress.com/all-wholesale-products.html"
+          ]
+        },
+        {
+          "domain": "bestbuy.com",
+          "urls": [
+            "https://www.bestbuy.com/site/electronics/computers-pcs/abcat0500000.c",
+            "https://www.bestbuy.com/site/electronics/tv-home-theater/abcat0100000.c",
+            "https://www.bestbuy.com/site/electronics/video-games/abcat0700000.c",
+            "https://www.bestbuy.com/site/electronics/cameras-camcorders/abcat0400000.c"
+          ]
+        },
+        {
+          "domain": "wayfair.com",
+          "urls": [
+            "https://www.wayfair.com/furniture/cat/furniture-c45974.html",
+            "https://www.wayfair.com/decor/cat/rugs-c215385.html",
+            "https://www.wayfair.com/outdoor/cat/outdoor-c32334.html",
+            "https://www.wayfair.com/kitchen-tabletop/cat/kitchen-c45944.html"
+          ]
+        },
+        {
+          "domain": "newegg.com",
+          "urls": [
+            "https://www.newegg.com/GPUs-Video-Graphics-Cards/Category/ID-38",
+            "https://www.newegg.com/Components-Computer-Parts/Category/ID-1",
+            "https://www.newegg.com/Tools-Accessories/Category/ID-12",
+            "https://www.newegg.com/Gaming-Desktops/SubCategory/ID-3742"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Developer Tools",
+      "pages": [
+        {
+          "domain": "github.com",
+          "urls": [
+            "https://github.com/tensorflow/tensorflow",
+            "https://github.com/microsoft/vscode",
+            "https://github.com/facebook/react",
+            "https://github.com/nodejs/node",
+            "https://github.com/flutter/flutter",
+            "https://github.com/golang/go",
+            "https://github.com/django/django",
+            "https://github.com/rust-lang/rust",
+            "https://github.com/kubernetes/kubernetes",
+            "https://github.com/features/actions",
+            "https://github.com/trending",
+            "https://github.com/explore",
+            "https://github.com/topics/machine-learning",
+            "https://github.com/features/packages",
+            "https://github.com/docs"
+          ]
+        },
+        {
+          "domain": "stackoverflow.com",
+          "urls": [
+            "https://stackoverflow.com/questions/tagged/javascript",
+            "https://stackoverflow.com/questions/tagged/python",
+            "https://stackoverflow.com/questions/tagged/java",
+            "https://stackoverflow.com/questions/tagged/react",
+            "https://stackoverflow.com/questions",
+            "https://stackoverflow.com/tags",
+            "https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git",
+            "https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array"
+          ]
+        },
+        {
+          "domain": "codepen.io",
+          "urls": [
+            "https://codepen.io/trending",
+            "https://codepen.io/picks",
+            "https://codepen.io/challenges",
+            "https://codepen.io/topics/css",
+            "https://codepen.io/pen/",
+            "https://codepen.io/pen/?editors=1000"
+          ]
+        },
+        {
+          "domain": "npmjs.com",
+          "urls": [
+            "https://www.npmjs.com/package/react",
+            "https://www.npmjs.com/package/lodash",
+            "https://www.npmjs.com/package/express",
+            "https://www.npmjs.com/search?q=ui%20library",
+            "https://www.npmjs.com/package/axios",
+            "https://www.npmjs.com/package/typescript"
+          ]
+        },
+        {
+          "domain": "gitlab.com",
+          "urls": [
+            "https://gitlab.com/explore/projects/trending",
+            "https://gitlab.com/gitlab-org/gitlab",
+            "https://gitlab.com/help/user/project/repository/index.md",
+            "https://gitlab.com/explore/projects"
+          ]
+        },
+        {
+          "domain": "replit.com",
+          "urls": [
+            "https://replit.com/templates/python",
+            "https://replit.com/templates/nodejs",
+            "https://replit.com/templates",
+            "https://replit.com/community"
+          ]
+        },
+        {
+          "domain": "vercel.com",
+          "urls": [
+            "https://vercel.com/templates",
+            "https://vercel.com/docs",
+            "https://vercel.com/guides",
+            "https://vercel.com/features/edge-functions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Social Media",
+      "pages": [
+        {
+          "domain": "twitter.com",
+          "urls": [
+            "https://twitter.com/explore",
+            "https://twitter.com/i/trends",
+            "https://twitter.com/search?q=technology",
+            "https://twitter.com/i/topics/839544274442051584",
+            "https://twitter.com/elonmusk",
+            "https://twitter.com/hashtag/AI"
+          ]
+        },
+        {
+          "domain": "facebook.com",
+          "urls": [
+            "https://www.facebook.com/groups/discover",
+            "https://www.facebook.com/marketplace",
+            "https://www.facebook.com/watch",
+            "https://www.facebook.com/events",
+            "https://www.facebook.com/gaming/feed"
+          ]
+        },
+        {
+          "domain": "reddit.com",
+          "urls": [
+            "https://www.reddit.com/r/programming/",
+            "https://www.reddit.com/r/datascience/",
+            "https://www.reddit.com/r/AskReddit/",
+            "https://www.reddit.com/r/worldnews/",
+            "https://www.reddit.com/r/science/",
+            "https://www.reddit.com/r/MachineLearning/",
+            "https://www.reddit.com/r/explainlikeimfive/",
+            "https://www.reddit.com/r/coolguides/",
+            "https://www.reddit.com/r/askscience/"
+          ]
+        },
+        {
+          "domain": "linkedin.com",
+          "urls": [
+            "https://www.linkedin.com/jobs/",
+            "https://www.linkedin.com/feed/news/",
+            "https://www.linkedin.com/learning/",
+            "https://www.linkedin.com/groups/",
+            "https://www.linkedin.com/pulse/topics/"
+          ]
+        },
+        {
+          "domain": "instagram.com",
+          "urls": [
+            "https://www.instagram.com/explore/",
+            "https://www.instagram.com/explore/tags/technology/",
+            "https://www.instagram.com/explore/tags/photography/",
+            "https://www.instagram.com/explore/tags/travel/",
+            "https://www.instagram.com/explore/tags/food/"
+          ]
+        },
+        {
+          "domain": "pinterest.com",
+          "urls": [
+            "https://www.pinterest.com/categories/home-decor/",
+            "https://www.pinterest.com/categories/food-and-drink/",
+            "https://www.pinterest.com/ideas/fashion/917006438126/",
+            "https://www.pinterest.com/ideas/diy-crafts/913211100395/",
+            "https://www.pinterest.com/today/"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "News & Media",
+      "pages": [
+        {
+          "domain": "nytimes.com",
+          "urls": [
+            "https://www.nytimes.com/section/technology",
+            "https://www.nytimes.com/section/business",
+            "https://www.nytimes.com/section/science",
+            "https://www.nytimes.com/section/world",
+            "https://www.nytimes.com/section/opinion",
+            "https://www.nytimes.com/section/arts",
+            "https://www.nytimes.com/section/health"
+          ]
+        },
+        {
+          "domain": "bbc.com",
+          "urls": [
+            "https://www.bbc.com/news/technology",
+            "https://www.bbc.com/news/science_and_environment",
+            "https://www.bbc.com/news/business",
+            "https://www.bbc.com/news/world",
+            "https://www.bbc.com/sport",
+            "https://www.bbc.com/future",
+            "https://www.bbc.com/travel"
+          ]
+        },
+        {
+          "domain": "theguardian.com",
+          "urls": [
+            "https://www.theguardian.com/technology",
+            "https://www.theguardian.com/science",
+            "https://www.theguardian.com/business",
+            "https://www.theguardian.com/data",
+            "https://www.theguardian.com/world",
+            "https://www.theguardian.com/environment",
+            "https://www.theguardian.com/games"
+          ]
+        },
+        {
+          "domain": "cnn.com",
+          "urls": [
+            "https://www.cnn.com/business/tech",
+            "https://www.cnn.com/business",
+            "https://www.cnn.com/health",
+            "https://www.cnn.com/world",
+            "https://www.cnn.com/politics",
+            "https://www.cnn.com/style"
+          ]
+        },
+        {
+          "domain": "reuters.com",
+          "urls": [
+            "https://www.reuters.com/technology/",
+            "https://www.reuters.com/business/",
+            "https://www.reuters.com/markets/",
+            "https://www.reuters.com/world/",
+            "https://www.reuters.com/sustainability/",
+            "https://www.reuters.com/investigates/"
+          ]
+        },
+        {
+          "domain": "aljazeera.com",
+          "urls": [
+            "https://www.aljazeera.com/news/",
+            "https://www.aljazeera.com/economy/",
+            "https://www.aljazeera.com/features/",
+            "https://www.aljazeera.com/opinions/",
+            "https://www.aljazeera.com/tag/science-and-technology/"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WordPress Sites",
+      "pages": [
+        {
+          "domain": "techcrunch.com",
+          "urls": [
+            "https://techcrunch.com/startups/",
+            "https://techcrunch.com/enterprise/",
+            "https://techcrunch.com/security/",
+            "https://techcrunch.com/apps/",
+            "https://techcrunch.com/venture/",
+            "https://techcrunch.com/gadgets/"
+          ]
+        },
+        {
+          "domain": "newyorker.com",
+          "urls": [
+            "https://www.newyorker.com/tech",
+            "https://www.newyorker.com/magazine",
+            "https://www.newyorker.com/culture",
+            "https://www.newyorker.com/science",
+            "https://www.newyorker.com/books",
+            "https://www.newyorker.com/news"
+          ]
+        },
+        {
+          "domain": "bloomberg.com",
+          "urls": [
+            "https://www.bloomberg.com/technology",
+            "https://www.bloomberg.com/markets",
+            "https://www.bloomberg.com/businessweek",
+            "https://www.bloomberg.com/graphics",
+            "https://www.bloomberg.com/wealth",
+            "https://www.bloomberg.com/green"
+          ]
+        },
+        {
+          "domain": "variety.com",
+          "urls": [
+            "https://variety.com/c/film/",
+            "https://variety.com/c/tv/",
+            "https://variety.com/c/music/",
+            "https://variety.com/c/digital/",
+            "https://variety.com/c/podcasts/",
+            "https://variety.com/c/awards/"
+          ]
+        },
+        {
+          "domain": "bbcamerica.com",
+          "urls": [
+            "https://www.bbcamerica.com/shows/",
+            "https://www.bbcamerica.com/blogs/",
+            "https://www.bbcamerica.com/schedule",
+            "https://www.bbcamerica.com/anglophenia"
+          ]
+        },
+        {
+          "domain": "wired.com",
+          "urls": [
+            "https://www.wired.com/category/business/",
+            "https://www.wired.com/category/culture/",
+            "https://www.wired.com/category/gear/",
+            "https://www.wired.com/category/ideas/",
+            "https://www.wired.com/category/science/",
+            "https://www.wired.com/category/security/"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Educational",
+      "pages": [
+        {
+          "domain": "coursera.org",
+          "urls": [
+            "https://www.coursera.org/browse/data-science",
+            "https://www.coursera.org/browse/computer-science",
+            "https://www.coursera.org/specializations/machine-learning-introduction",
+            "https://www.coursera.org/professional-certificates/google-data-analytics",
+            "https://www.coursera.org/degrees",
+            "https://www.coursera.org/browse/business"
+          ]
+        },
+        {
+          "domain": "edx.org",
+          "urls": [
+            "https://www.edx.org/learn/computer-science",
+            "https://www.edx.org/learn/artificial-intelligence",
+            "https://www.edx.org/course/introduction-to-computer-science-and-programming-7",
+            "https://www.edx.org/professional-certificate/harvardx-data-science",
+            "https://www.edx.org/learn/business",
+            "https://www.edx.org/learn/engineering"
+          ]
+        },
+        {
+          "domain": "khanacademy.org",
+          "urls": [
+            "https://www.khanacademy.org/computing/computer-programming",
+            "https://www.khanacademy.org/math/calculus-1",
+            "https://www.khanacademy.org/science/physics",
+            "https://www.khanacademy.org/economics-finance-domain/entrepreneurship",
+            "https://www.khanacademy.org/humanities/art-history",
+            "https://www.khanacademy.org/science/biology"
+          ]
+        },
+        {
+          "domain": "udemy.com",
+          "urls": [
+            "https://www.udemy.com/courses/development/web-development/",
+            "https://www.udemy.com/courses/development/data-science/",
+            "https://www.udemy.com/courses/business/project-management/",
+            "https://www.udemy.com/courses/it-and-software/aws-certification/",
+            "https://www.udemy.com/topic/machine-learning/"
+          ]
+        },
+        {
+          "domain": "duolingo.com",
+          "urls": [
+            "https://www.duolingo.com/learn",
+            "https://www.duolingo.com/course/es/en/Learn-Spanish",
+            "https://www.duolingo.com/course/fr/en/Learn-French",
+            "https://www.duolingo.com/course/ja/en/Learn-Japanese",
+            "https://www.duolingo.com/course/de/en/Learn-German"
+          ]
+        },
+        {
+          "domain": "mit.edu",
+          "urls": [
+            "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/",
+            "https://ocw.mit.edu/courses/mathematics/",
+            "https://ocw.mit.edu/courses/physics/",
+            "https://ocw.mit.edu/courses/biology/",
+            "https://ocw.mit.edu/search/?q=artificial%20intelligence"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reference & Documentation",
+      "pages": [
+        {
+          "domain": "wikipedia.org",
+          "urls": [
+            "https://en.wikipedia.org/wiki/Artificial_intelligence",
+            "https://en.wikipedia.org/wiki/Computer_programming",
+            "https://en.wikipedia.org/wiki/Data_science",
+            "https://en.wikipedia.org/wiki/Web_development",
+            "https://en.wikipedia.org/wiki/Machine_learning",
+            "https://en.wikipedia.org/wiki/Neural_network",
+            "https://en.wikipedia.org/wiki/Quantum_computing",
+            "https://en.wikipedia.org/wiki/Blockchain"
+          ]
+        },
+        {
+          "domain": "developer.mozilla.org",
+          "urls": [
+            "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            "https://developer.mozilla.org/en-US/docs/Web/CSS",
+            "https://developer.mozilla.org/en-US/docs/Web/API",
+            "https://developer.mozilla.org/en-US/docs/Web/HTTP",
+            "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+            "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps",
+            "https://developer.mozilla.org/en-US/docs/Learn"
+          ]
+        },
+        {
+          "domain": "docs.python.org",
+          "urls": [
+            "https://docs.python.org/3/tutorial/index.html",
+            "https://docs.python.org/3/library/index.html",
+            "https://docs.python.org/3/reference/index.html",
+            "https://docs.python.org/3/howto/index.html",
+            "https://docs.python.org/3/extending/index.html",
+            "https://docs.python.org/3/c-api/index.html"
+          ]
+        },
+        {
+          "domain": "reactjs.org",
+          "urls": [
+            "https://reactjs.org/docs/getting-started.html",
+            "https://reactjs.org/docs/hooks-intro.html",
+            "https://reactjs.org/docs/components-and-props.html",
+            "https://reactjs.org/docs/state-and-lifecycle.html",
+            "https://reactjs.org/tutorial/tutorial.html"
+          ]
+        },
+        {
+          "domain": "vuejs.org",
+          "urls": [
+            "https://vuejs.org/guide/introduction.html",
+            "https://vuejs.org/guide/essentials/component-basics.html",
+            "https://vuejs.org/api/",
+            "https://vuejs.org/style-guide/",
+            "https://vuejs.org/examples/"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Video Platforms",
+      "pages": [
+        {
+          "domain": "youtube.com",
+          "urls": [
+            "https://www.youtube.com/feed/trending",
+            "https://www.youtube.com/gaming",
+            "https://www.youtube.com/learning",
+            "https://www.youtube.com/results?search_query=programming+tutorial",
+            "https://www.youtube.com/music",
+            "https://www.youtube.com/news",
+            "https://www.youtube.com/premium",
+            "https://www.youtube.com/playlist?list=PLpPqplz6dKxW5ZfERnppdSNp9DIvFBj68"
+          ]
+        },
+        {
+          "domain": "twitch.tv",
+          "urls": [
+            "https://www.twitch.tv/directory/game/Software%20and%20Game%20Development",
+            "https://www.twitch.tv/directory/game/Just%20Chatting",
+            "https://www.twitch.tv/directory",
+            "https://www.twitch.tv/directory/esports",
+            "https://www.twitch.tv/directory/game/League%20of%20Legends",
+            "https://www.twitch.tv/directory/game/Music"
+          ]
+        },
+        {
+          "domain": "vimeo.com",
+          "urls": [
+            "https://vimeo.com/categories/animation",
+            "https://vimeo.com/categories/documentary",
+            "https://vimeo.com/watch",
+            "https://vimeo.com/categories/technology",
+            "https://vimeo.com/categories/experimental",
+            "https://vimeo.com/search?q=tutorial"
+          ]
+        },
+        {
+          "domain": "netflix.com",
+          "urls": [
+            "https://www.netflix.com/browse/genre/83",
+            "https://www.netflix.com/browse/genre/6839",
+            "https://www.netflix.com/browse/genre/1365",
+            "https://www.netflix.com/browse/genre/7424",
+            "https://www.netflix.com/browse/genre/2595"
+          ]
+        },
+        {
+          "domain": "tiktok.com",
+          "urls": [
+            "https://www.tiktok.com/discover/technology",
+            "https://www.tiktok.com/discover/coding",
+            "https://www.tiktok.com/discover/educational",
+            "https://www.tiktok.com/discover/life-hacks",
+            "https://www.tiktok.com/discover/dance"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Government & Services",
+      "pages": [
+        {
+          "domain": "usa.gov",
+          "urls": [
+            "https://www.usa.gov/benefits",
+            "https://www.usa.gov/housing",
+            "https://www.usa.gov/business",
+            "https://www.usa.gov/health",
+            "https://www.usa.gov/education",
+            "https://www.usa.gov/jobs"
+          ]
+        },
+        {
+          "domain": "irs.gov",
+          "urls": [
+            "https://www.irs.gov/forms-instructions",
+            "https://www.irs.gov/payments",
+            "https://www.irs.gov/credits-deductions",
+            "https://www.irs.gov/businesses",
+            "https://www.irs.gov/tax-professionals"
+          ]
+        },
+        {
+          "domain": "who.int",
+          "urls": [
+            "https://www.who.int/health-topics",
+            "https://www.who.int/emergencies",
+            "https://www.who.int/news-room",
+            "https://www.who.int/data",
+            "https://www.who.int/publications"
+          ]
+        },
+        {
+          "domain": "un.org",
+          "urls": [
+            "https://www.un.org/en/global-issues",
+            "https://www.un.org/en/our-work",
+            "https://www.un.org/en/about-us",
+            "https://www.un.org/en/climatechange",
+            "https://www.un.org/en/coronavirus"
+          ]
+        },
+        {
+          "domain": "europa.eu",
+          "urls": [
+            "https://europa.eu/european-union/topics_en",
+            "https://europa.eu/european-union/business_en",
+            "https://europa.eu/european-union/documents-publications_en",
+            "https://europa.eu/european-union/about-eu_en"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Productivity Tools",
+      "pages": [
+        {
+          "domain": "notion.so",
+          "urls": [
+            "https://www.notion.so/product",
+            "https://www.notion.so/templates",
+            "https://www.notion.so/pricing",
+            "https://www.notion.so/guides",
+            "https://www.notion.so/help"
+          ]
+        },
+        {
+          "domain": "trello.com",
+          "urls": [
+            "https://trello.com/templates",
+            "https://trello.com/tour",
+            "https://trello.com/views",
+            "https://trello.com/pricing",
+            "https://trello.com/en/guide"
+          ]
+        },
+        {
+          "domain": "slack.com",
+          "urls": [
+            "https://slack.com/features",
+            "https://slack.com/resources",
+            "https://slack.com/help",
+            "https://slack.com/enterprise",
+            "https://slack.com/connect"
+          ]
+        },
+        {
+          "domain": "asana.com",
+          "urls": [
+            "https://asana.com/features",
+            "https://asana.com/uses",
+            "https://asana.com/templates",
+            "https://asana.com/guide",
+            "https://asana.com/pricing"
+          ]
+        },
+        {
+          "domain": "airtable.com",
+          "urls": [
+            "https://airtable.com/product",
+            "https://airtable.com/templates",
+            "https://airtable.com/pricing",
+            "https://airtable.com/guides",
+            "https://airtable.com/marketplace"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "pages": [
+        {
+          "domain": "bloomberg.com",
+          "urls": [
+            "https://www.bloomberg.com/markets/stocks",
+            "https://www.bloomberg.com/markets/commodities",
+            "https://www.bloomberg.com/markets/currencies",
+            "https://www.bloomberg.com/markets/sectors",
+            "https://www.bloomberg.com/markets/rates-bonds"
+          ]
+        },
+        {
+          "domain": "cnbc.com",
+          "urls": [
+            "https://www.cnbc.com/markets/",
+            "https://www.cnbc.com/business/",
+            "https://www.cnbc.com/investing/",
+            "https://www.cnbc.com/technology/",
+            "https://www.cnbc.com/personal-finance/"
+          ]
+        },
+        {
+          "domain": "marketwatch.com",
+          "urls": [
+            "https://www.marketwatch.com/investing",
+            "https://www.marketwatch.com/markets",
+            "https://www.marketwatch.com/personal-finance",
+            "https://www.marketwatch.com/economy-politics",
+            "https://www.marketwatch.com/watchlist"
+          ]
+        },
+        {
+          "domain": "investopedia.com",
+          "urls": [
+            "https://www.investopedia.com/investing-4427685",
+            "https://www.investopedia.com/personal-finance-4427760",
+            "https://www.investopedia.com/terms/i/investment.asp",
+            "https://www.investopedia.com/retirement-planning-4689695",
+            "https://www.investopedia.com/technical-analysis-4689657"
+          ]
+        },
+        {
+          "domain": "morningstar.com",
+          "urls": [
+            "https://www.morningstar.com/stocks",
+            "https://www.morningstar.com/funds",
+            "https://www.morningstar.com/etfs",
+            "https://www.morningstar.com/markets",
+            "https://www.morningstar.com/portfolios"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Forums & Communities",
+      "pages": [
+        {
+          "domain": "quora.com",
+          "urls": [
+            "https://www.quora.com/topic/Computer-Programming",
+            "https://www.quora.com/topic/Technology",
+            "https://www.quora.com/topic/Data-Science",
+            "https://www.quora.com/topic/Machine-Learning",
+            "https://www.quora.com/topic/Artificial-Intelligence"
+          ]
+        },
+        {
+          "domain": "discord.com",
+          "urls": [
+            "https://discord.com/safety",
+            "https://discord.com/developers",
+            "https://discord.com/community",
+            "https://discord.com/nitro",
+            "https://discord.com/servers"
+          ]
+        },
+        {
+          "domain": "medium.com",
+          "urls": [
+            "https://medium.com/topic/technology",
+            "https://medium.com/topic/programming",
+            "https://medium.com/topic/data-science",
+            "https://medium.com/topic/artificial-intelligence",
+            "https://medium.com/topic/software-engineering",
+            "https://medium.com/topic/cryptocurrency"
+          ]
+        },
+        {
+          "domain": "news.ycombinator.com",
+          "urls": [
+            "https://news.ycombinator.com/newest",
+            "https://news.ycombinator.com/ask",
+            "https://news.ycombinator.com/show",
+            "https://news.ycombinator.com/jobs",
+            "https://news.ycombinator.com/best"
+          ]
+        },
+        {
+          "domain": "slashdot.org",
+          "urls": [
+            "https://slashdot.org/tag/ai",
+            "https://slashdot.org/tag/technology",
+            "https://slashdot.org/tag/science",
+            "https://slashdot.org/tag/opensource",
+            "https://slashdot.org/tag/security"
+          ]
+        }
+      ]
+    }
+  ]
+}

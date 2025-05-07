@@ -17,9 +17,9 @@
         {
           "domain": "ebay.com",
           "urls": [
+            "https://www.ebay.com",
             "https://www.ebay.com/b/Collectibles-Art/bn_7000259855",
             "https://www.ebay.com/deals",
-            "https://www.ebay.com/e/fashiondeals/mens-watches",
             "https://www.ebay.com/sch/i.html?_nkw=vintage+camera",
             "https://www.ebay.com/help/selling/selling/start-selling-ebay?id=4081"
           ]
@@ -47,19 +47,21 @@
         {
           "domain": "aliexpress.com",
           "urls": [
+            "https://aliexpress.com",
             "https://www.aliexpress.com/category/200003482/dresses.html",
             "https://www.aliexpress.com/category/200002394/phones.html",
             "https://www.aliexpress.com/category/44/consumer-electronics.html",
-            "https://www.aliexpress.com/all-wholesale-products.html"
+            "https://www.aliexpress.com/ssr/300001995/K8bGS6h3wS?disableNav=YES&pha_manifest=ssr&_immersiveMode=true"
           ]
         },
         {
           "domain": "bestbuy.com",
           "urls": [
-            "https://www.bestbuy.com/site/electronics/computers-pcs/abcat0500000.c",
-            "https://www.bestbuy.com/site/electronics/tv-home-theater/abcat0100000.c",
-            "https://www.bestbuy.com/site/electronics/video-games/abcat0700000.c",
-            "https://www.bestbuy.com/site/electronics/cameras-camcorders/abcat0400000.c"
+            "https://www.bestbuy.com/site/electronics/computers-pcs/abcat0500000.c?intl=nosplash",
+            "https://www.bestbuy.com/site/electronics/tv-home-theater/abcat0100000.c?intl=nosplash",
+            "https://www.bestbuy.com/site/electronics/video-games/abcat0700000.c?intl=nosplash",
+            "https://www.bestbuy.com/site/cameras-camcorders/digital-cameras/abcat0401000.c?id=abcat0401000",
+            "https://www.bestbuy.com/site/car-audio-gps/gps-navigation/abcat0301000.c?id=abcat0301000"
           ]
         },
         {
@@ -68,15 +70,17 @@
             "https://www.wayfair.com/furniture/cat/furniture-c45974.html",
             "https://www.wayfair.com/decor/cat/rugs-c215385.html",
             "https://www.wayfair.com/outdoor/cat/outdoor-c32334.html",
-            "https://www.wayfair.com/kitchen-tabletop/cat/kitchen-c45944.html"
+            "https://www.wayfair.com/lighting/sb0/ceiling-fans-with-lights-c1870036.html",
+            "https://www.wayfair.com/kitchen-tabletop/sb0/blenders-c419247.html"
           ]
         },
         {
           "domain": "newegg.com",
           "urls": [
             "https://www.newegg.com/GPUs-Video-Graphics-Cards/Category/ID-38",
+            "https://www.newegg.com/p/pl?N=100007709%20601292088%20601292090&cm_sp=Cat_video-Cards_3-_-Visnav-_-Full-Size-Graphics-Cards_2",
             "https://www.newegg.com/Components-Computer-Parts/Category/ID-1",
-            "https://www.newegg.com/Tools-Accessories/Category/ID-12",
+            "https://www.newegg.com/Clearance-Store/EventSaleStore/ID-697?cm_sp=Head_Navigation-_-Under_Search_Bar-_-Clearance&icid=755812",
             "https://www.newegg.com/Gaming-Desktops/SubCategory/ID-3742"
           ]
         }
@@ -173,14 +177,13 @@
       "name": "Social Media",
       "pages": [
         {
-          "domain": "twitter.com",
+          "domain": "x.com",
           "urls": [
-            "https://twitter.com/explore",
-            "https://twitter.com/i/trends",
-            "https://twitter.com/search?q=technology",
-            "https://twitter.com/i/topics/839544274442051584",
-            "https://twitter.com/elonmusk",
-            "https://twitter.com/hashtag/AI"
+            "https://x.com/internetarchive?",
+            "https://x.com/machine_ml?lang=it",
+            "https://x.com/shitpost_2049/status/1915857467868582397?s=52&t=mnHMZydYQOxjWgZtVW2aHg",
+            "https://x.com/mervenoyann",
+            "https://x.com/mervenoyann/highlights"
           ]
         },
         {
@@ -190,8 +193,11 @@
             "https://www.facebook.com/marketplace",
             "https://www.facebook.com/watch",
             "https://www.facebook.com/events",
-            "https://www.facebook.com/gaming/feed"
-          ]
+            "https://www.facebook.com"
+          ],
+          "preprocessing": {
+            "deleteQuery": [".__fb-light-mode.x1n2onr6.xzkaem6"]
+          }
         },
         {
           "domain": "reddit.com",
@@ -204,17 +210,18 @@
             "https://www.reddit.com/r/MachineLearning/",
             "https://www.reddit.com/r/explainlikeimfive/",
             "https://www.reddit.com/r/coolguides/",
-            "https://www.reddit.com/r/askscience/"
+            "https://www.reddit.com/r/askscience/",
+            "https://www.reddit.com/r/coolguides/comments/1kexrnb/a_cool_guide_to_the_top_50_albums_of_all_time/",
+            "https://www.reddit.com/r/MachineLearning/comments/1kf8x0l/d_fourier_features_in_neutral_networks/"
           ]
         },
         {
           "domain": "linkedin.com",
           "urls": [
             "https://www.linkedin.com/jobs/",
-            "https://www.linkedin.com/feed/news/",
             "https://www.linkedin.com/learning/",
-            "https://www.linkedin.com/groups/",
-            "https://www.linkedin.com/pulse/topics/"
+            "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4225532735",
+            "https://www.linkedin.com/posts/francesco-saverio-zuppichini-94659a150_ai-ml-ds-activity-7059449793143582720-8tos?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRk3cYBXhZU1qQ09eSkSad9chCPAdJdrn4"
           ]
         },
         {
@@ -222,19 +229,20 @@
           "urls": [
             "https://www.instagram.com/explore/",
             "https://www.instagram.com/explore/tags/technology/",
-            "https://www.instagram.com/explore/tags/photography/",
-            "https://www.instagram.com/explore/tags/travel/",
-            "https://www.instagram.com/explore/tags/food/"
+            "https://www.instagram.com/explore/topics/917256014984692/photography/",
+            "https://www.instagram.com/explore/topics/10156104410190727/fashion-and-beauty/",
+            "https://www.instagram.com/explore/topics/10155868806390727/sports/"
           ]
         },
         {
           "domain": "pinterest.com",
           "urls": [
+            "https://www.pinterest.com/ideas/",
             "https://www.pinterest.com/categories/home-decor/",
             "https://www.pinterest.com/categories/food-and-drink/",
-            "https://www.pinterest.com/ideas/fashion/917006438126/",
-            "https://www.pinterest.com/ideas/diy-crafts/913211100395/",
-            "https://www.pinterest.com/today/"
+            "https://www.pinterest.com/search/pins/?q=rick%20and%20morty&rs=typed",
+            "https://www.pinterest.com/pin/1477812373623090/",
+            "https://www.pinterest.com/#inspiration"
           ]
         }
       ]
@@ -320,10 +328,10 @@
           "urls": [
             "https://techcrunch.com/startups/",
             "https://techcrunch.com/enterprise/",
-            "https://techcrunch.com/security/",
+            "https://techcrunch.com/2025/05/06/nso-group-must-pay-more-than-167-million-in-damages-to-whatsapp-for-spyware-campaign/",
             "https://techcrunch.com/apps/",
             "https://techcrunch.com/venture/",
-            "https://techcrunch.com/gadgets/"
+            "https://techcrunch.com/2025/04/14/chipolos-newest-airtag-competitor-works-with-both-apple-and-googles-finding-networks/"
           ]
         },
         {
@@ -331,8 +339,8 @@
           "urls": [
             "https://www.newyorker.com/tech",
             "https://www.newyorker.com/magazine",
-            "https://www.newyorker.com/culture",
-            "https://www.newyorker.com/science",
+            "https://www.newyorker.com/culture/the-food-scene/the-caribbean-restaurant-reinventing-the-momofuku-empire",
+            "https://www.newyorker.com/humor/shouts-murmurs/what-to-do-when-your-friend-unfollows-you",
             "https://www.newyorker.com/books",
             "https://www.newyorker.com/news"
           ]
@@ -343,27 +351,24 @@
             "https://www.bloomberg.com/technology",
             "https://www.bloomberg.com/markets",
             "https://www.bloomberg.com/businessweek",
-            "https://www.bloomberg.com/graphics",
-            "https://www.bloomberg.com/wealth",
-            "https://www.bloomberg.com/green"
+            "https://www.bloomberg.com/graphics/2025-trump-memecoin-foreign-crypto-traders/?srnd=phx-graphics-v2",
+            "https://www.bloomberg.com/news/articles/2025-05-07/hims-ceo-andrew-dudum-is-a-billionaire-on-weight-loss-drug-demand?srnd=phx-wealth"
           ]
         },
         {
           "domain": "variety.com",
           "urls": [
-            "https://variety.com/c/film/",
+            "https://cloud.email.variety.com/signup/",
             "https://variety.com/c/tv/",
-            "https://variety.com/c/music/",
-            "https://variety.com/c/digital/",
-            "https://variety.com/c/podcasts/",
-            "https://variety.com/c/awards/"
+            "https://variety.com/2024/film/tv/ecam-incubator-nexus-creafilms-alvaro-lopez-alba-1236151908/",
+            "https://variety.com/v/film/",
+            "https://variety.com/2025/film/news/buddy-guy-sinners-film-role-bluesman-interview-1236378816/"
           ]
         },
         {
           "domain": "bbcamerica.com",
           "urls": [
             "https://www.bbcamerica.com/shows/",
-            "https://www.bbcamerica.com/blogs/",
             "https://www.bbcamerica.com/schedule",
             "https://www.bbcamerica.com/anglophenia"
           ]
@@ -371,11 +376,13 @@
         {
           "domain": "wired.com",
           "urls": [
-            "https://www.wired.com/category/business/",
+            "https://www.wired.com/",
+            "https://www.wired.com/story/ai-lab-amazon-launches-vulcan-a-robot-that-can-feel/",
             "https://www.wired.com/category/culture/",
             "https://www.wired.com/category/gear/",
             "https://www.wired.com/category/ideas/",
             "https://www.wired.com/category/science/",
+            "https://www.wired.com/story/hhs-niaid-irf-ebola-disease-research-stop/",
             "https://www.wired.com/category/security/"
           ]
         }
@@ -455,6 +462,7 @@
         {
           "domain": "wikipedia.org",
           "urls": [
+            "https://en.wikipedia.org/wiki/Main_Page",
             "https://en.wikipedia.org/wiki/Artificial_intelligence",
             "https://en.wikipedia.org/wiki/Computer_programming",
             "https://en.wikipedia.org/wiki/Data_science",
@@ -472,30 +480,25 @@
             "https://developer.mozilla.org/en-US/docs/Web/CSS",
             "https://developer.mozilla.org/en-US/docs/Web/API",
             "https://developer.mozilla.org/en-US/docs/Web/HTTP",
-            "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
-            "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps",
-            "https://developer.mozilla.org/en-US/docs/Learn"
+            "https://developer.mozilla.org/en-US/curriculum/"
           ]
         },
         {
           "domain": "docs.python.org",
           "urls": [
             "https://docs.python.org/3/tutorial/index.html",
-            "https://docs.python.org/3/library/index.html",
-            "https://docs.python.org/3/reference/index.html",
-            "https://docs.python.org/3/howto/index.html",
-            "https://docs.python.org/3/extending/index.html",
-            "https://docs.python.org/3/c-api/index.html"
+            "https://docs.python.org/3/howto/unicode.html#unicode-howto",
+            "https://docs.python.org/3/bugs.html"
           ]
         },
         {
-          "domain": "reactjs.org",
+          "domain": "react.dev",
           "urls": [
-            "https://reactjs.org/docs/getting-started.html",
-            "https://reactjs.org/docs/hooks-intro.html",
-            "https://reactjs.org/docs/components-and-props.html",
-            "https://reactjs.org/docs/state-and-lifecycle.html",
-            "https://reactjs.org/tutorial/tutorial.html"
+            "https://react.dev/blog/2023/03/16/introducing-react-dev",
+            "https://react.dev/reference/react",
+            "https://react.dev/reference/rules/components-and-hooks-must-be-pure",
+            "https://react.dev/reference/rsc/server-components#server-components-without-a-server",
+            "https://react.dev/reference/rsc/use-server"
           ]
         },
         {
@@ -577,17 +580,18 @@
           "domain": "usa.gov",
           "urls": [
             "https://www.usa.gov/benefits",
+            "https://www.usa.gov/health-insurance",
             "https://www.usa.gov/housing",
+            "https://www.usa.gov/green-card-permanent-resident-immigrant-visa",
             "https://www.usa.gov/business",
-            "https://www.usa.gov/health",
-            "https://www.usa.gov/education",
-            "https://www.usa.gov/jobs"
+            "https://www.usa.gov/#all-topics-header"
           ]
         },
         {
           "domain": "irs.gov",
           "urls": [
             "https://www.irs.gov/forms-instructions",
+            "https://www.irs.gov/forms-pubs/changes-to-current-forms-publications",
             "https://www.irs.gov/payments",
             "https://www.irs.gov/credits-deductions",
             "https://www.irs.gov/businesses",
@@ -598,7 +602,8 @@
           "domain": "who.int",
           "urls": [
             "https://www.who.int/health-topics",
-            "https://www.who.int/emergencies",
+            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019",
+            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports",
             "https://www.who.int/news-room",
             "https://www.who.int/data",
             "https://www.who.int/publications"
@@ -619,9 +624,16 @@
           "urls": [
             "https://europa.eu/european-union/topics_en",
             "https://europa.eu/european-union/business_en",
-            "https://europa.eu/european-union/documents-publications_en",
+            "https://european-union.europa.eu/institutions-law-budget_en",
+            "https://european-union.europa.eu/live-work-study/living-eu_en",
             "https://europa.eu/european-union/about-eu_en"
-          ]
+          ],
+          "preprocessing": {
+            "deleteQuery": [
+              "#ec-survey-pop-up-overlay",
+              "#ec-survey-pop-up-container-wrapper"
+            ]
+          }
         }
       ]
     },
@@ -633,8 +645,9 @@
           "urls": [
             "https://www.notion.so/product",
             "https://www.notion.so/templates",
+            "https://www.notion.so/templates/category/gifts-and-wish-list",
             "https://www.notion.so/pricing",
-            "https://www.notion.so/guides",
+            "https://www.notion.com/help/guides/how-to-get-better-answers-from-notion-ai",
             "https://www.notion.so/help"
           ]
         },
@@ -654,7 +667,7 @@
             "https://slack.com/features",
             "https://slack.com/resources",
             "https://slack.com/help",
-            "https://slack.com/enterprise",
+            "https://slack.com/intl/en-gb/events",
             "https://slack.com/connect"
           ]
         },
@@ -688,7 +701,7 @@
           "urls": [
             "https://www.bloomberg.com/markets/stocks",
             "https://www.bloomberg.com/markets/commodities",
-            "https://www.bloomberg.com/markets/currencies",
+            "https://www.bloomberg.com/news/articles/2025-05-07/dollar-exodus-to-unleash-2-5-trillion-fx-avalanche-jen-says",
             "https://www.bloomberg.com/markets/sectors",
             "https://www.bloomberg.com/markets/rates-bonds"
           ]
@@ -698,18 +711,20 @@
           "urls": [
             "https://www.cnbc.com/markets/",
             "https://www.cnbc.com/business/",
+            "https://www.cnbc.com/2025/05/07/carvana-cvna-earnings-q1-2025.html",
             "https://www.cnbc.com/investing/",
             "https://www.cnbc.com/technology/",
-            "https://www.cnbc.com/personal-finance/"
+            "https://www.cnbc.com/2025/05/07/irs-budget-cuts-doge.html"
           ]
         },
         {
           "domain": "marketwatch.com",
           "urls": [
             "https://www.marketwatch.com/investing",
+            "https://www.marketwatch.com/story/apple-cut-share-buybacks-and-its-stock-took-the-hit-heres-what-sellers-are-missing-f5cb8500?mod=investing",
             "https://www.marketwatch.com/markets",
             "https://www.marketwatch.com/personal-finance",
-            "https://www.marketwatch.com/economy-politics",
+            "https://www.marketwatch.com/story/want-to-challenge-your-property-tax-bill-heres-the-smart-way-to-do-it-and-how-much-you-could-save-53103ff1?mod=personal-finance",
             "https://www.marketwatch.com/watchlist"
           ]
         },
@@ -717,19 +732,21 @@
           "domain": "investopedia.com",
           "urls": [
             "https://www.investopedia.com/investing-4427685",
+            "https://www.investopedia.com/articles/basics/06/invest1000.asp",
             "https://www.investopedia.com/personal-finance-4427760",
             "https://www.investopedia.com/terms/i/investment.asp",
             "https://www.investopedia.com/retirement-planning-4689695",
-            "https://www.investopedia.com/technical-analysis-4689657"
+            "https://www.investopedia.com/personal-finance/most-common-financial-mistakes/"
           ]
         },
         {
           "domain": "morningstar.com",
           "urls": [
             "https://www.morningstar.com/stocks",
+            "https://www.morningstar.com/stocks/uber-earnings-moderating-growth-increasing-operating-profitability",
             "https://www.morningstar.com/funds",
             "https://www.morningstar.com/etfs",
-            "https://www.morningstar.com/markets",
+            "https://www.morningstar.com/funds/6-top-etfs-buy-before-small-cap-stocks-revive",
             "https://www.morningstar.com/portfolios"
           ]
         }
@@ -762,11 +779,11 @@
           "domain": "medium.com",
           "urls": [
             "https://medium.com/topic/technology",
+            "https://medium.com/@ignacio.de.gregorio.noblejas/china-says-no-to-ai-hype-94aabd51a0d9",
             "https://medium.com/topic/programming",
             "https://medium.com/topic/data-science",
-            "https://medium.com/topic/artificial-intelligence",
-            "https://medium.com/topic/software-engineering",
-            "https://medium.com/topic/cryptocurrency"
+            "https://medium.com/@rico-fritzsche",
+            "https://medium.com/gitconnected/can-you-really-trust-your-compiler-83c6b9ba82c6"
           ]
         },
         {

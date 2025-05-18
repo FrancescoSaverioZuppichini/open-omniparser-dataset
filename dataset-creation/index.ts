@@ -289,9 +289,11 @@ async function capturePageData({
   url,
   deleteQuery,
   outputDir,
+  cookie,
 }: {
   url: string;
   deleteQuery?: string;
+  cookie?: string;
   outputDir: string;
 }): Promise<PageData> {
   let browser: Browser | null = null;
@@ -333,6 +335,18 @@ async function capturePageData({
           element.remove();
         });
       }, deleteQuery);
+    }
+
+    if (cookie) {
+      console.log(`Clicking on cookie using selector: ${cookie}`);
+      try {
+        await page.click(cookie);
+      } catch (error) {
+        console.error(
+          `Failed to click on element with selector "${cookie}":`,
+          error
+        );
+      }
     }
 
     // Get page dimensions
@@ -418,10 +432,17 @@ async function saveDataToJson(
   // const url =
   //   "https://github.com/KwaiVGI/LivePortrait/commit/6c4a883a9e67330fdecb0982b0c0611d425c8681";
   const url = "https://www.facebook.com/marketplace";
+  const deleteQuery = ".__fb-light-mode.x1n2onr6.xzkaem6";
+  const cookie = '[aria-label="Allow all cookies"]';
 
   try {
     console.log(`Starting data collection for ${url}`);
-    const pageData = await capturePageData({ url, outputDir });
+    const pageData = await capturePageData({
+      url,
+      deleteQuery,
+      cookie,
+      outputDir,
+    });
 
     console.log(`Found ${pageData.elements.length} interactive elements`);
     await saveDataToJson(pageData, outputDir);

@@ -17,6 +17,7 @@ export interface InteractiveElement {
 
 export interface PageData {
   url: string;
+  id: string;
   viewport: {
     width: number;
     height: number;
@@ -31,19 +32,16 @@ export interface Config {
   selectors: string[];
 }
 
-export interface WebsitesConfig {
-  [x: string]: [
+export type WebsitesConfig = {
+  name: string;
+  pages: [
     {
-      name: string;
-      pages: [
-        {
-          domain: string;
-          urls: string[];
-          preprocessing?: {
-            deleteQuery: string[];
-          };
-        }
-      ];
+      domain: string;
+      urls: string[];
+      preprocessing?: {
+        deleteQueries?: string[];
+        cookieQuery?: string;
+      };
     }
   ];
-}
+}[];

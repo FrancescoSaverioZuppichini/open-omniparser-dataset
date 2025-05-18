@@ -17,9 +17,9 @@
         {
           "domain": "ebay.com",
           "urls": [
-            "https://www.ebay.com",
             "https://www.ebay.com/b/Collectibles-Art/bn_7000259855",
             "https://www.ebay.com/deals",
+            "https://www.ebay.com/e/fashiondeals/mens-watches",
             "https://www.ebay.com/sch/i.html?_nkw=vintage+camera",
             "https://www.ebay.com/help/selling/selling/start-selling-ebay?id=4081"
           ]
@@ -47,21 +47,19 @@
         {
           "domain": "aliexpress.com",
           "urls": [
-            "https://aliexpress.com",
             "https://www.aliexpress.com/category/200003482/dresses.html",
             "https://www.aliexpress.com/category/200002394/phones.html",
             "https://www.aliexpress.com/category/44/consumer-electronics.html",
-            "https://www.aliexpress.com/ssr/300001995/K8bGS6h3wS?disableNav=YES&pha_manifest=ssr&_immersiveMode=true"
+            "https://www.aliexpress.com/all-wholesale-products.html"
           ]
         },
         {
           "domain": "bestbuy.com",
           "urls": [
-            "https://www.bestbuy.com/site/electronics/computers-pcs/abcat0500000.c?intl=nosplash",
-            "https://www.bestbuy.com/site/electronics/tv-home-theater/abcat0100000.c?intl=nosplash",
-            "https://www.bestbuy.com/site/electronics/video-games/abcat0700000.c?intl=nosplash",
-            "https://www.bestbuy.com/site/cameras-camcorders/digital-cameras/abcat0401000.c?id=abcat0401000",
-            "https://www.bestbuy.com/site/car-audio-gps/gps-navigation/abcat0301000.c?id=abcat0301000"
+            "https://www.bestbuy.com/site/electronics/computers-pcs/abcat0500000.c",
+            "https://www.bestbuy.com/site/electronics/tv-home-theater/abcat0100000.c",
+            "https://www.bestbuy.com/site/electronics/video-games/abcat0700000.c",
+            "https://www.bestbuy.com/site/electronics/cameras-camcorders/abcat0400000.c"
           ]
         },
         {
@@ -70,17 +68,15 @@
             "https://www.wayfair.com/furniture/cat/furniture-c45974.html",
             "https://www.wayfair.com/decor/cat/rugs-c215385.html",
             "https://www.wayfair.com/outdoor/cat/outdoor-c32334.html",
-            "https://www.wayfair.com/lighting/sb0/ceiling-fans-with-lights-c1870036.html",
-            "https://www.wayfair.com/kitchen-tabletop/sb0/blenders-c419247.html"
+            "https://www.wayfair.com/kitchen-tabletop/cat/kitchen-c45944.html"
           ]
         },
         {
           "domain": "newegg.com",
           "urls": [
             "https://www.newegg.com/GPUs-Video-Graphics-Cards/Category/ID-38",
-            "https://www.newegg.com/p/pl?N=100007709%20601292088%20601292090&cm_sp=Cat_video-Cards_3-_-Visnav-_-Full-Size-Graphics-Cards_2",
             "https://www.newegg.com/Components-Computer-Parts/Category/ID-1",
-            "https://www.newegg.com/Clearance-Store/EventSaleStore/ID-697?cm_sp=Head_Navigation-_-Under_Search_Bar-_-Clearance&icid=755812",
+            "https://www.newegg.com/Tools-Accessories/Category/ID-12",
             "https://www.newegg.com/Gaming-Desktops/SubCategory/ID-3742"
           ]
         }
@@ -100,12 +96,12 @@
             "https://github.com/golang/go",
             "https://github.com/django/django",
             "https://github.com/rust-lang/rust",
-            "https://github.com/kubernetes/kubernetes",
+            "https://github.com/kubernetes/kubernetes/pulls",
             "https://github.com/features/actions",
             "https://github.com/trending",
             "https://github.com/explore",
             "https://github.com/topics/machine-learning",
-            "https://github.com/features/packages",
+            "https://github.com/dotnet/runtime/pull/115380",
             "https://github.com/docs"
           ]
         },
@@ -126,21 +122,21 @@
           "domain": "codepen.io",
           "urls": [
             "https://codepen.io/trending",
-            "https://codepen.io/picks",
+            "https://codepen.io/spark",
             "https://codepen.io/challenges",
             "https://codepen.io/topics/css",
             "https://codepen.io/pen/",
-            "https://codepen.io/pen/?editors=1000"
+            "https://codepen.io/doel_javid/pen/ByyPBzm"
           ]
         },
         {
           "domain": "npmjs.com",
           "urls": [
             "https://www.npmjs.com/package/react",
-            "https://www.npmjs.com/package/lodash",
+            "https://docs.npmjs.com/",
             "https://www.npmjs.com/package/express",
             "https://www.npmjs.com/search?q=ui%20library",
-            "https://www.npmjs.com/package/axios",
+            "https://www.npmjs.com/support",
             "https://www.npmjs.com/package/typescript"
           ]
         },
@@ -156,8 +152,8 @@
         {
           "domain": "replit.com",
           "urls": [
-            "https://replit.com/templates/python",
-            "https://replit.com/templates/nodejs",
+            "https://replit.com/@replit/Python?v=1",
+            "https://blog.replit.com/",
             "https://replit.com/templates",
             "https://replit.com/community"
           ]
@@ -177,13 +173,14 @@
       "name": "Social Media",
       "pages": [
         {
-          "domain": "x.com",
+          "domain": "twitter.com",
           "urls": [
-            "https://x.com/internetarchive?",
-            "https://x.com/machine_ml?lang=it",
-            "https://x.com/shitpost_2049/status/1915857467868582397?s=52&t=mnHMZydYQOxjWgZtVW2aHg",
-            "https://x.com/mervenoyann",
-            "https://x.com/mervenoyann/highlights"
+            "https://twitter.com/explore",
+            "https://twitter.com/i/trends",
+            "https://twitter.com/search?q=technology",
+            "https://twitter.com/i/topics/839544274442051584",
+            "https://twitter.com/elonmusk",
+            "https://twitter.com/hashtag/AI"
           ]
         },
         {
@@ -193,11 +190,8 @@
             "https://www.facebook.com/marketplace",
             "https://www.facebook.com/watch",
             "https://www.facebook.com/events",
-            "https://www.facebook.com"
-          ],
-          "preprocessing": {
-            "deleteQuery": [".__fb-light-mode.x1n2onr6.xzkaem6"]
-          }
+            "https://www.facebook.com/gaming/feed"
+          ]
         },
         {
           "domain": "reddit.com",
@@ -210,18 +204,17 @@
             "https://www.reddit.com/r/MachineLearning/",
             "https://www.reddit.com/r/explainlikeimfive/",
             "https://www.reddit.com/r/coolguides/",
-            "https://www.reddit.com/r/askscience/",
-            "https://www.reddit.com/r/coolguides/comments/1kexrnb/a_cool_guide_to_the_top_50_albums_of_all_time/",
-            "https://www.reddit.com/r/MachineLearning/comments/1kf8x0l/d_fourier_features_in_neutral_networks/"
+            "https://www.reddit.com/r/askscience/"
           ]
         },
         {
           "domain": "linkedin.com",
           "urls": [
             "https://www.linkedin.com/jobs/",
+            "https://www.linkedin.com/feed/news/",
             "https://www.linkedin.com/learning/",
-            "https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4225532735",
-            "https://www.linkedin.com/posts/francesco-saverio-zuppichini-94659a150_ai-ml-ds-activity-7059449793143582720-8tos?utm_source=share&utm_medium=member_desktop&rcm=ACoAACRk3cYBXhZU1qQ09eSkSad9chCPAdJdrn4"
+            "https://www.linkedin.com/groups/",
+            "https://www.linkedin.com/pulse/topics/"
           ]
         },
         {
@@ -229,20 +222,19 @@
           "urls": [
             "https://www.instagram.com/explore/",
             "https://www.instagram.com/explore/tags/technology/",
-            "https://www.instagram.com/explore/topics/917256014984692/photography/",
-            "https://www.instagram.com/explore/topics/10156104410190727/fashion-and-beauty/",
-            "https://www.instagram.com/explore/topics/10155868806390727/sports/"
+            "https://www.instagram.com/explore/tags/photography/",
+            "https://www.instagram.com/explore/tags/travel/",
+            "https://www.instagram.com/explore/tags/food/"
           ]
         },
         {
           "domain": "pinterest.com",
           "urls": [
-            "https://www.pinterest.com/ideas/",
             "https://www.pinterest.com/categories/home-decor/",
             "https://www.pinterest.com/categories/food-and-drink/",
-            "https://www.pinterest.com/search/pins/?q=rick%20and%20morty&rs=typed",
-            "https://www.pinterest.com/pin/1477812373623090/",
-            "https://www.pinterest.com/#inspiration"
+            "https://www.pinterest.com/ideas/fashion/917006438126/",
+            "https://www.pinterest.com/ideas/diy-crafts/913211100395/",
+            "https://www.pinterest.com/today/"
           ]
         }
       ]
@@ -254,35 +246,35 @@
           "domain": "nytimes.com",
           "urls": [
             "https://www.nytimes.com/section/technology",
-            "https://www.nytimes.com/section/business",
-            "https://www.nytimes.com/section/science",
-            "https://www.nytimes.com/section/world",
-            "https://www.nytimes.com/section/opinion",
-            "https://www.nytimes.com/section/arts",
-            "https://www.nytimes.com/section/health"
+            "https://www.nytimes.com/section/markets-overview",
+            "https://www.nytimes.com/column/hard-fork",
+            "https://www.nytimes.com/search?query=biden",
+            "https://www.nytimes.com/live/2025/05/07/us/trump-news",
+            "https://www.nytimes.com/2025/05/07/movies/sinners-beyonce-kendrick-lamar.html",
+            "https://www.nytimes.com/games/wordle/index.html"
           ]
         },
         {
           "domain": "bbc.com",
           "urls": [
             "https://www.bbc.com/news/technology",
-            "https://www.bbc.com/news/science_and_environment",
-            "https://www.bbc.com/news/business",
-            "https://www.bbc.com/news/world",
-            "https://www.bbc.com/sport",
-            "https://www.bbc.com/future",
-            "https://www.bbc.com/travel"
+            "https://www.bbc.com/news/articles/cd020710v1ko",
+            "https://www.bbc.com/weather",
+            "https://www.bbc.co.uk/search?q=queen",
+            "https://www.bbc.com/video",
+            "https://www.bbc.com/newsletters",
+            "https://account.bbc.com/auth"
           ]
         },
         {
           "domain": "theguardian.com",
           "urls": [
             "https://www.theguardian.com/technology",
-            "https://www.theguardian.com/science",
-            "https://www.theguardian.com/business",
-            "https://www.theguardian.com/data",
-            "https://www.theguardian.com/world",
-            "https://www.theguardian.com/environment",
+            "https://www.theguardian.com/video",
+            "https://www.theguardian.com/world/video/2025/may/07/black-smoke-emerges-at-vatican-as-conclave-fails-to-elect-pope-video",
+            "https://jobs.theguardian.com/",
+            "https://www.theguardian.com/football/ipswichtown",
+            "https://www.theguardian.com/games/2025/may/02/grand-theft-auto-vi-delayed-until-may-2026",
             "https://www.theguardian.com/games"
           ]
         },
@@ -290,32 +282,33 @@
           "domain": "cnn.com",
           "urls": [
             "https://www.cnn.com/business/tech",
-            "https://www.cnn.com/business",
-            "https://www.cnn.com/health",
-            "https://www.cnn.com/world",
-            "https://www.cnn.com/politics",
-            "https://www.cnn.com/style"
+            "https://edition.cnn.com/markets",
+            "https://edition.cnn.com/2025/03/29/africa/sudan-peace-deal-cusp-civil-war-intl",
+            "https://edition.cnn.com/account/log-in",
+            "https://edition.cnn.com/election/2025",
+            "https://edition.cnn.com/videos"
           ]
         },
         {
           "domain": "reuters.com",
           "urls": [
             "https://www.reuters.com/technology/",
-            "https://www.reuters.com/business/",
-            "https://www.reuters.com/markets/",
-            "https://www.reuters.com/world/",
-            "https://www.reuters.com/sustainability/",
-            "https://www.reuters.com/investigates/"
+            "https://www.reuters.com/legal/microsoft-wins-ftc-appeal-challenging-69-bln-activision-blizzard-deal-2025-05-07/",
+            "https://www.reuters.com/account/subscribe",
+            "https://www.reuters.com/breakingviews/",
+            "https://www.reuters.com/site-search/?query=funny",
+            "https://www.reuters.com/investigates/",
+            "https://www.reuters.com/account/sign-in"
           ]
         },
         {
           "domain": "aljazeera.com",
           "urls": [
             "https://www.aljazeera.com/news/",
-            "https://www.aljazeera.com/economy/",
-            "https://www.aljazeera.com/features/",
-            "https://www.aljazeera.com/opinions/",
-            "https://www.aljazeera.com/tag/science-and-technology/"
+            "https://www.aljazeera.com/live",
+            "https://www.aljazeera.com/news/2025/5/7/how-israels-plan-for-gaza-could-turbocharge-ethnic-cleansing",
+            "https://www.aljazeera.com/search/obama",
+            "https://www.aljazeera.com/news/liveblog/2025/5/6/india-pakistan-fighting-live-india-fires-missiles-into-pakistan"
           ]
         }
       ]
@@ -328,10 +321,10 @@
           "urls": [
             "https://techcrunch.com/startups/",
             "https://techcrunch.com/enterprise/",
-            "https://techcrunch.com/2025/05/06/nso-group-must-pay-more-than-167-million-in-damages-to-whatsapp-for-spyware-campaign/",
+            "https://techcrunch.com/security/",
             "https://techcrunch.com/apps/",
             "https://techcrunch.com/venture/",
-            "https://techcrunch.com/2025/04/14/chipolos-newest-airtag-competitor-works-with-both-apple-and-googles-finding-networks/"
+            "https://techcrunch.com/gadgets/"
           ]
         },
         {
@@ -339,8 +332,8 @@
           "urls": [
             "https://www.newyorker.com/tech",
             "https://www.newyorker.com/magazine",
-            "https://www.newyorker.com/culture/the-food-scene/the-caribbean-restaurant-reinventing-the-momofuku-empire",
-            "https://www.newyorker.com/humor/shouts-murmurs/what-to-do-when-your-friend-unfollows-you",
+            "https://www.newyorker.com/culture",
+            "https://www.newyorker.com/science",
             "https://www.newyorker.com/books",
             "https://www.newyorker.com/news"
           ]
@@ -351,24 +344,27 @@
             "https://www.bloomberg.com/technology",
             "https://www.bloomberg.com/markets",
             "https://www.bloomberg.com/businessweek",
-            "https://www.bloomberg.com/graphics/2025-trump-memecoin-foreign-crypto-traders/?srnd=phx-graphics-v2",
-            "https://www.bloomberg.com/news/articles/2025-05-07/hims-ceo-andrew-dudum-is-a-billionaire-on-weight-loss-drug-demand?srnd=phx-wealth"
+            "https://www.bloomberg.com/graphics",
+            "https://www.bloomberg.com/wealth",
+            "https://www.bloomberg.com/green"
           ]
         },
         {
           "domain": "variety.com",
           "urls": [
-            "https://cloud.email.variety.com/signup/",
+            "https://variety.com/c/film/",
             "https://variety.com/c/tv/",
-            "https://variety.com/2024/film/tv/ecam-incubator-nexus-creafilms-alvaro-lopez-alba-1236151908/",
-            "https://variety.com/v/film/",
-            "https://variety.com/2025/film/news/buddy-guy-sinners-film-role-bluesman-interview-1236378816/"
+            "https://variety.com/c/music/",
+            "https://variety.com/c/digital/",
+            "https://variety.com/c/podcasts/",
+            "https://variety.com/c/awards/"
           ]
         },
         {
           "domain": "bbcamerica.com",
           "urls": [
             "https://www.bbcamerica.com/shows/",
+            "https://www.bbcamerica.com/blogs/",
             "https://www.bbcamerica.com/schedule",
             "https://www.bbcamerica.com/anglophenia"
           ]
@@ -376,13 +372,11 @@
         {
           "domain": "wired.com",
           "urls": [
-            "https://www.wired.com/",
-            "https://www.wired.com/story/ai-lab-amazon-launches-vulcan-a-robot-that-can-feel/",
+            "https://www.wired.com/category/business/",
             "https://www.wired.com/category/culture/",
             "https://www.wired.com/category/gear/",
             "https://www.wired.com/category/ideas/",
             "https://www.wired.com/category/science/",
-            "https://www.wired.com/story/hhs-niaid-irf-ebola-disease-research-stop/",
             "https://www.wired.com/category/security/"
           ]
         }
@@ -395,42 +389,45 @@
           "domain": "coursera.org",
           "urls": [
             "https://www.coursera.org/browse/data-science",
-            "https://www.coursera.org/browse/computer-science",
+            "https://www.coursera.org/search?query=jazz%20improvisation",
             "https://www.coursera.org/specializations/machine-learning-introduction",
             "https://www.coursera.org/professional-certificates/google-data-analytics",
             "https://www.coursera.org/degrees",
-            "https://www.coursera.org/browse/business"
+            "https://www.coursera.org/campus"
           ]
         },
         {
           "domain": "edx.org",
           "urls": [
             "https://www.edx.org/learn/computer-science",
-            "https://www.edx.org/learn/artificial-intelligence",
+            "https://www.edx.org/learn/computer-science#browse-online-computer-science-courses",
             "https://www.edx.org/course/introduction-to-computer-science-and-programming-7",
             "https://www.edx.org/professional-certificate/harvardx-data-science",
-            "https://www.edx.org/learn/business",
-            "https://www.edx.org/learn/engineering"
+            "https://www.edx.org/courses?q=free+online+courses",
+            "https://www.edx.org/search?q=history"
           ]
         },
         {
           "domain": "khanacademy.org",
+          "preprocessing": {
+            "deleteQuery": ["._1fwfssc"]
+          },
           "urls": [
-            "https://www.khanacademy.org/computing/computer-programming",
+            "https://www.khanacademy.org/computing/computer-programming/html-css/intro-to-html/v/making-webpages-intro",
             "https://www.khanacademy.org/math/calculus-1",
-            "https://www.khanacademy.org/science/physics",
-            "https://www.khanacademy.org/economics-finance-domain/entrepreneurship",
-            "https://www.khanacademy.org/humanities/art-history",
-            "https://www.khanacademy.org/science/biology"
+            "https://www.khanacademy.org/search?page_search_query=game",
+            "https://donate.khanacademy.org/campaign/580662/donate",
+            "https://www.khanacademy.org/about/the-team",
+            "https://www.khanacademy.org/humanities/ap-art-history/d"
           ]
         },
         {
           "domain": "udemy.com",
           "urls": [
             "https://www.udemy.com/courses/development/web-development/",
-            "https://www.udemy.com/courses/development/data-science/",
-            "https://www.udemy.com/courses/business/project-management/",
-            "https://www.udemy.com/courses/it-and-software/aws-certification/",
+            "https://www.udemy.com/courses/search/?src=ukw&q=circuit+bending",
+            "https://www.udemy.com/course/pmp-pmbok6-35-pdus/",
+            "https://support.udemy.com/hc/en-us?",
             "https://www.udemy.com/topic/machine-learning/"
           ]
         },
@@ -438,20 +435,20 @@
           "domain": "duolingo.com",
           "urls": [
             "https://www.duolingo.com/learn",
-            "https://www.duolingo.com/course/es/en/Learn-Spanish",
-            "https://www.duolingo.com/course/fr/en/Learn-French",
-            "https://www.duolingo.com/course/ja/en/Learn-Japanese",
-            "https://www.duolingo.com/course/de/en/Learn-German"
+            "https://www.duolingo.com/welcome",
+            "https://www.duolingo.com/learn",
+            "https://www.duolingo.com/quests",
+            "https://www.duolingo.com/shop"
           ]
         },
         {
           "domain": "mit.edu",
           "urls": [
             "https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/",
-            "https://ocw.mit.edu/courses/mathematics/",
-            "https://ocw.mit.edu/courses/physics/",
-            "https://ocw.mit.edu/courses/biology/",
-            "https://ocw.mit.edu/search/?q=artificial%20intelligence"
+            "https://ocw.mit.edu/courses/6-00-introduction-to-computer-science-and-programming-fall-2008/",
+            "https://dspace.mit.edu/handle/1721.1/150580",
+            "https://ocw.mit.edu/search/?d=Biology&q=electronics&s=department_course_numbers.sort_coursenum",
+            "https://ocw.mit.edu/courses/res-ll-005-mathematics-of-big-data-and-machine-learning-january-iap-2020/resources/artificial-intelligence-and-machine-learning/"
           ]
         }
       ]
@@ -462,7 +459,6 @@
         {
           "domain": "wikipedia.org",
           "urls": [
-            "https://en.wikipedia.org/wiki/Main_Page",
             "https://en.wikipedia.org/wiki/Artificial_intelligence",
             "https://en.wikipedia.org/wiki/Computer_programming",
             "https://en.wikipedia.org/wiki/Data_science",
@@ -480,25 +476,30 @@
             "https://developer.mozilla.org/en-US/docs/Web/CSS",
             "https://developer.mozilla.org/en-US/docs/Web/API",
             "https://developer.mozilla.org/en-US/docs/Web/HTTP",
-            "https://developer.mozilla.org/en-US/curriculum/"
+            "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API",
+            "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps",
+            "https://developer.mozilla.org/en-US/docs/Learn"
           ]
         },
         {
           "domain": "docs.python.org",
           "urls": [
             "https://docs.python.org/3/tutorial/index.html",
-            "https://docs.python.org/3/howto/unicode.html#unicode-howto",
-            "https://docs.python.org/3/bugs.html"
+            "https://docs.python.org/3/library/index.html",
+            "https://docs.python.org/3/reference/index.html",
+            "https://docs.python.org/3/howto/index.html",
+            "https://docs.python.org/3/extending/index.html",
+            "https://docs.python.org/3/c-api/index.html"
           ]
         },
         {
-          "domain": "react.dev",
+          "domain": "reactjs.org",
           "urls": [
-            "https://react.dev/blog/2023/03/16/introducing-react-dev",
-            "https://react.dev/reference/react",
-            "https://react.dev/reference/rules/components-and-hooks-must-be-pure",
-            "https://react.dev/reference/rsc/server-components#server-components-without-a-server",
-            "https://react.dev/reference/rsc/use-server"
+            "https://reactjs.org/docs/getting-started.html",
+            "https://reactjs.org/docs/hooks-intro.html",
+            "https://reactjs.org/docs/components-and-props.html",
+            "https://reactjs.org/docs/state-and-lifecycle.html",
+            "https://reactjs.org/tutorial/tutorial.html"
           ]
         },
         {
@@ -520,55 +521,55 @@
           "domain": "youtube.com",
           "urls": [
             "https://www.youtube.com/feed/trending",
+            "https://www.youtube.com/watch?v=VQRLujxTm3c",
             "https://www.youtube.com/gaming",
-            "https://www.youtube.com/learning",
-            "https://www.youtube.com/results?search_query=programming+tutorial",
+            "https://www.youtube.com/results?search_query=durgasoft",
             "https://www.youtube.com/music",
             "https://www.youtube.com/news",
             "https://www.youtube.com/premium",
-            "https://www.youtube.com/playlist?list=PLpPqplz6dKxW5ZfERnppdSNp9DIvFBj68"
+            "https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDQMgEzdN5RuCXE&start_radio=1"
           ]
         },
         {
           "domain": "twitch.tv",
           "urls": [
             "https://www.twitch.tv/directory/game/Software%20and%20Game%20Development",
-            "https://www.twitch.tv/directory/game/Just%20Chatting",
+            "https://www.twitch.tv/ask_jesus",
             "https://www.twitch.tv/directory",
             "https://www.twitch.tv/directory/esports",
             "https://www.twitch.tv/directory/game/League%20of%20Legends",
-            "https://www.twitch.tv/directory/game/Music"
+            "https://www.twitch.tv/downloads"
           ]
         },
         {
           "domain": "vimeo.com",
           "urls": [
             "https://vimeo.com/categories/animation",
-            "https://vimeo.com/categories/documentary",
+            "https://vimeo.com/1079623899",
             "https://vimeo.com/watch",
-            "https://vimeo.com/categories/technology",
+            "https://vimeo.com/search?q=parenzo",
             "https://vimeo.com/categories/experimental",
-            "https://vimeo.com/search?q=tutorial"
+            "https://vimeo.com/upgrade-plan"
           ]
         },
         {
           "domain": "netflix.com",
           "urls": [
             "https://www.netflix.com/browse/genre/83",
-            "https://www.netflix.com/browse/genre/6839",
-            "https://www.netflix.com/browse/genre/1365",
-            "https://www.netflix.com/browse/genre/7424",
-            "https://www.netflix.com/browse/genre/2595"
+            "https://www.netflix.com/ch-en/title/81666165",
+            "https://www.netflix.com/signup",
+            "https://help.netflix.com/en/contactus",
+            "https://www.netflix.com/gift-cards"
           ]
         },
         {
           "domain": "tiktok.com",
           "urls": [
             "https://www.tiktok.com/discover/technology",
-            "https://www.tiktok.com/discover/coding",
-            "https://www.tiktok.com/discover/educational",
-            "https://www.tiktok.com/discover/life-hacks",
-            "https://www.tiktok.com/discover/dance"
+            "https://www.tiktok.com/@tiktok.12_daughter/video/7485804311117712662",
+            "https://www.tiktok.com/following",
+            "https://www.tiktok.com/search?q=primeagen",
+            "https://www.tiktok.com/contact?lang=en"
           ]
         }
       ]
@@ -580,18 +581,17 @@
           "domain": "usa.gov",
           "urls": [
             "https://www.usa.gov/benefits",
-            "https://www.usa.gov/health-insurance",
             "https://www.usa.gov/housing",
-            "https://www.usa.gov/green-card-permanent-resident-immigrant-visa",
             "https://www.usa.gov/business",
-            "https://www.usa.gov/#all-topics-header"
+            "https://www.usa.gov/health",
+            "https://www.usa.gov/education",
+            "https://www.usa.gov/jobs"
           ]
         },
         {
           "domain": "irs.gov",
           "urls": [
             "https://www.irs.gov/forms-instructions",
-            "https://www.irs.gov/forms-pubs/changes-to-current-forms-publications",
             "https://www.irs.gov/payments",
             "https://www.irs.gov/credits-deductions",
             "https://www.irs.gov/businesses",
@@ -602,8 +602,7 @@
           "domain": "who.int",
           "urls": [
             "https://www.who.int/health-topics",
-            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019",
-            "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports",
+            "https://www.who.int/emergencies",
             "https://www.who.int/news-room",
             "https://www.who.int/data",
             "https://www.who.int/publications"
@@ -624,16 +623,9 @@
           "urls": [
             "https://europa.eu/european-union/topics_en",
             "https://europa.eu/european-union/business_en",
-            "https://european-union.europa.eu/institutions-law-budget_en",
-            "https://european-union.europa.eu/live-work-study/living-eu_en",
+            "https://europa.eu/european-union/documents-publications_en",
             "https://europa.eu/european-union/about-eu_en"
-          ],
-          "preprocessing": {
-            "deleteQuery": [
-              "#ec-survey-pop-up-overlay",
-              "#ec-survey-pop-up-container-wrapper"
-            ]
-          }
+          ]
         }
       ]
     },
@@ -645,9 +637,8 @@
           "urls": [
             "https://www.notion.so/product",
             "https://www.notion.so/templates",
-            "https://www.notion.so/templates/category/gifts-and-wish-list",
             "https://www.notion.so/pricing",
-            "https://www.notion.com/help/guides/how-to-get-better-answers-from-notion-ai",
+            "https://www.notion.so/guides",
             "https://www.notion.so/help"
           ]
         },
@@ -667,7 +658,7 @@
             "https://slack.com/features",
             "https://slack.com/resources",
             "https://slack.com/help",
-            "https://slack.com/intl/en-gb/events",
+            "https://slack.com/enterprise",
             "https://slack.com/connect"
           ]
         },
@@ -701,7 +692,7 @@
           "urls": [
             "https://www.bloomberg.com/markets/stocks",
             "https://www.bloomberg.com/markets/commodities",
-            "https://www.bloomberg.com/news/articles/2025-05-07/dollar-exodus-to-unleash-2-5-trillion-fx-avalanche-jen-says",
+            "https://www.bloomberg.com/markets/currencies",
             "https://www.bloomberg.com/markets/sectors",
             "https://www.bloomberg.com/markets/rates-bonds"
           ]
@@ -711,20 +702,18 @@
           "urls": [
             "https://www.cnbc.com/markets/",
             "https://www.cnbc.com/business/",
-            "https://www.cnbc.com/2025/05/07/carvana-cvna-earnings-q1-2025.html",
             "https://www.cnbc.com/investing/",
             "https://www.cnbc.com/technology/",
-            "https://www.cnbc.com/2025/05/07/irs-budget-cuts-doge.html"
+            "https://www.cnbc.com/personal-finance/"
           ]
         },
         {
           "domain": "marketwatch.com",
           "urls": [
             "https://www.marketwatch.com/investing",
-            "https://www.marketwatch.com/story/apple-cut-share-buybacks-and-its-stock-took-the-hit-heres-what-sellers-are-missing-f5cb8500?mod=investing",
             "https://www.marketwatch.com/markets",
             "https://www.marketwatch.com/personal-finance",
-            "https://www.marketwatch.com/story/want-to-challenge-your-property-tax-bill-heres-the-smart-way-to-do-it-and-how-much-you-could-save-53103ff1?mod=personal-finance",
+            "https://www.marketwatch.com/economy-politics",
             "https://www.marketwatch.com/watchlist"
           ]
         },
@@ -732,21 +721,19 @@
           "domain": "investopedia.com",
           "urls": [
             "https://www.investopedia.com/investing-4427685",
-            "https://www.investopedia.com/articles/basics/06/invest1000.asp",
             "https://www.investopedia.com/personal-finance-4427760",
             "https://www.investopedia.com/terms/i/investment.asp",
             "https://www.investopedia.com/retirement-planning-4689695",
-            "https://www.investopedia.com/personal-finance/most-common-financial-mistakes/"
+            "https://www.investopedia.com/technical-analysis-4689657"
           ]
         },
         {
           "domain": "morningstar.com",
           "urls": [
             "https://www.morningstar.com/stocks",
-            "https://www.morningstar.com/stocks/uber-earnings-moderating-growth-increasing-operating-profitability",
             "https://www.morningstar.com/funds",
             "https://www.morningstar.com/etfs",
-            "https://www.morningstar.com/funds/6-top-etfs-buy-before-small-cap-stocks-revive",
+            "https://www.morningstar.com/markets",
             "https://www.morningstar.com/portfolios"
           ]
         }
@@ -758,17 +745,17 @@
         {
           "domain": "quora.com",
           "urls": [
-            "https://www.quora.com/topic/Computer-Programming",
+            "https://www.quora.com/What-is-the-worst-most-unhelpful-error-message-you-have-ever-seen-as-a-programmer",
             "https://www.quora.com/topic/Technology",
-            "https://www.quora.com/topic/Data-Science",
-            "https://www.quora.com/topic/Machine-Learning",
-            "https://www.quora.com/topic/Artificial-Intelligence"
+            "https://www.quora.com/topic/Data-Science/writers",
+            "https://business.quora.com/",
+            "https://www.quora.com/profile/Sridhar-N-214"
           ]
         },
         {
           "domain": "discord.com",
           "urls": [
-            "https://discord.com/safety",
+            "https://discord.com/servers/midjourney-662267976984297473",
             "https://discord.com/developers",
             "https://discord.com/community",
             "https://discord.com/nitro",
@@ -779,31 +766,31 @@
           "domain": "medium.com",
           "urls": [
             "https://medium.com/topic/technology",
-            "https://medium.com/@ignacio.de.gregorio.noblejas/china-says-no-to-ai-hype-94aabd51a0d9",
             "https://medium.com/topic/programming",
             "https://medium.com/topic/data-science",
-            "https://medium.com/@rico-fritzsche",
-            "https://medium.com/gitconnected/can-you-really-trust-your-compiler-83c6b9ba82c6"
+            "https://medium.com/topic/artificial-intelligence",
+            "https://medium.com/topic/software-engineering",
+            "https://medium.com/topic/cryptocurrency"
           ]
         },
         {
           "domain": "news.ycombinator.com",
           "urls": [
             "https://news.ycombinator.com/newest",
-            "https://news.ycombinator.com/ask",
-            "https://news.ycombinator.com/show",
+            "https://hn.algolia.com/?q=open+source",
+            "https://news.ycombinator.com/newcomments",
             "https://news.ycombinator.com/jobs",
-            "https://news.ycombinator.com/best"
+            "https://news.ycombinator.com/item?id=43547611"
           ]
         },
         {
           "domain": "slashdot.org",
           "urls": [
             "https://slashdot.org/tag/ai",
-            "https://slashdot.org/tag/technology",
-            "https://slashdot.org/tag/science",
-            "https://slashdot.org/tag/opensource",
-            "https://slashdot.org/tag/security"
+            "https://yro.slashdot.org/story/25/05/07/2018224/trump-will-rescind-biden-era-ai-chip-export-curbs",
+            "https://slashdot.org/content/",
+            "https://slashdot.org/hof.shtml",
+            "https://slashdot.org/index2.pl?fhfilter=ebay"
           ]
         }
       ]

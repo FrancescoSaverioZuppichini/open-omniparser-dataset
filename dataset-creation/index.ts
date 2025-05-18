@@ -1,10 +1,85 @@
-import puppeteer, { Browser, Page, ElementHandle } from "puppeteer";
+import { Browser, Page, ElementHandle } from "puppeteer";
+import puppeteer from "puppeteer-extra";
 import fs from "fs/promises";
 import path from "path";
 import type { InteractiveElement, PageData } from "./types";
+import StealthPlugin from "puppeteer-extra-plugin-stealth";
+import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
 
 const OMNI_DATASET_DIR = process.env.OMNI_DATASET_DIR ?? "../dataset";
 
+async function acceptCookieConsent(
+  page: Page,
+  timeout: number = 1000
+): Promise<boolean> {
+  // Common cookie consent button selectors
+  const selectors: string[] = [
+    // Facebook
+    'button[data-cookiebanner="accept_button"]',
+    'button[data-testid="cookie-policy-manage-dialog-accept-button"]',
+    'button[data-testid="cookie-policy-dialog-accept-button"]',
+
+    // Google services
+    "button#L2AGLb",
+    "button.tHlp8d",
+
+    // Common frameworks/implementations
+    "button#onetrust-accept-btn-handler",
+    "button.accept-cookies-button",
+    "button.consent-accept",
+    "button.cookie-accept",
+    "button.accept-all-cookies",
+    ".cookie-banner .accept-button",
+    "#accept-cookies",
+    "#cookie-notice .accept",
+    ".cc-accept",
+    ".gdpr-consent-button",
+    ".cookie-consent-accept",
+    ".cookie-banner__accept",
+    '[aria-label="Accept cookies"]',
+    '[aria-label="Accept all cookies"]',
+    ".js-accept-cookies",
+    ".js-accept-all-cookies",
+    ".cookie-consent__accept-button",
+    'div[class*="cookie"] button:first-child',
+    'div[id*="cookie"] button:first-child',
+    ".CybotCookiebotDialogBodyButton",
+    ".eu-cookie-compliance-default-button",
+    '[aria-label="Allow all cookies"]',
+  ];
+
+  try {
+    // Try each selector until one works
+    for (const selector of selectors) {
+      try {
+        // Wait for selector with a short timeout
+        const button = await page.waitForSelector(selector, { timeout });
+
+        if (button) {
+          // Click the button and wait a moment
+          await button.click();
+          // Use this instead of waitForTimeout
+          await page.evaluate(
+            () => new Promise((resolve) => setTimeout(resolve, 500))
+          );
+          console.log(
+            `Successfully clicked cookie consent button: ${selector}`
+          );
+          return true;
+        }
+      } catch (e) {
+        // This selector wasn't found - continue to next one
+      }
+    }
+
+    // If execution reaches here, no selectors were found
+    console.log("No cookie consent buttons found");
+    return false;
+  } catch (error) {
+    console.error("Error while trying to accept cookies:", error);
+    return false;
+  }
+}
 async function captureInteractiveElements(
   page: Page
 ): Promise<InteractiveElement[]> {
@@ -210,15 +285,23 @@ async function captureInteractiveElements(
   });
 }
 
-async function capturePageData(
-  url: string,
-  outputDir: string
-): Promise<PageData> {
+async function capturePageData({
+  url,
+  deleteQuery,
+  outputDir,
+}: {
+  url: string;
+  deleteQuery?: string;
+  outputDir: string;
+}): Promise<PageData> {
   let browser: Browser | null = null;
 
   try {
     // Create output directory if it doesn't exist
     await fs.mkdir(outputDir, { recursive: true });
+
+    puppeteer.use(StealthPlugin());
+    puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 
     // Launch the browser
     browser = await puppeteer.launch({
@@ -239,6 +322,18 @@ async function capturePageData(
       waitUntil: "networkidle2",
       timeout: 60000,
     });
+    await acceptCookieConsent(page);
+
+    // Remove elements matching deleteQuery if provided
+    if (deleteQuery) {
+      console.log(`Removing elements matching selector: ${deleteQuery}`);
+      await page.evaluate((selector) => {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach((element) => {
+          element.remove();
+        });
+      }, deleteQuery);
+    }
 
     // Get page dimensions
     const dimensions = await page.evaluate(() => {
@@ -322,11 +417,11 @@ async function saveDataToJson(
   // const url = "https://github.com/KwaiVGI/LivePortrait";
   // const url =
   //   "https://github.com/KwaiVGI/LivePortrait/commit/6c4a883a9e67330fdecb0982b0c0611d425c8681";
-  const url = "https://www.ebay.com/";
+  const url = "https://www.facebook.com/marketplace";
 
   try {
     console.log(`Starting data collection for ${url}`);
-    const pageData = await capturePageData(url, outputDir);
+    const pageData = await capturePageData({ url, outputDir });
 
     console.log(`Found ${pageData.elements.length} interactive elements`);
     await saveDataToJson(pageData, outputDir);

@@ -30,3 +30,20 @@ export interface PageData {
 export interface Config {
   selectors: string[];
 }
+
+export interface WebsitesConfig {
+  [x: string]: [
+    {
+      name: string;
+      pages: [
+        {
+          domain: string;
+          urls: string[];
+          preprocessing?: {
+            deleteQuery: string[];
+          };
+        }
+      ];
+    }
+  ];
+}

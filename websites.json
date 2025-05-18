@@ -190,8 +190,12 @@
             "https://www.facebook.com/marketplace",
             "https://www.facebook.com/watch",
             "https://www.facebook.com/events",
-            "https://www.facebook.com/gaming/feed"
-          ]
+            "https://www.facebook.com"
+          ],
+          "preprocessing": {
+            "deleteQuery": [".__fb-light-mode.x1n2onr6.xzkaem6"],
+            "cookie": "[aria-label=\"Allow all cookies\"]"
+          }
         },
         {
           "domain": "reddit.com",

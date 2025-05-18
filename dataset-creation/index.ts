@@ -33,7 +33,7 @@ const website = websitesData as unknown as WebsitesConfig;
           continue;
         }
         // Process the page
-        const pageData = await capturePageData({
+        await capturePageData({
           url,
           deleteQueries: page.preprocessing?.deleteQueries,
           cookieQuery: page.preprocessing?.cookieQuery,
@@ -42,12 +42,9 @@ const website = websitesData as unknown as WebsitesConfig;
 
         const duration = ((performance.now() - start) / 1000).toFixed(2);
 
-        console.log(
-          `    └─ 🔗 ${url} | ✅ ${pageData.elements.length} elements | ⏱️ ${duration}s`
-        );
-
-        await saveDataToJson(pageData, outputDir);
+        console.log(`    └─ 🔗 ${url} | ✅ done | ⏱️ ${duration}s`);
       }
+      process.exit(1);
     }
   }
   process.exit(1);

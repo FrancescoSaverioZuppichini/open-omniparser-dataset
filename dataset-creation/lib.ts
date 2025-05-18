@@ -298,7 +298,7 @@ export async function capturePageData({
   deleteQueries?: string[];
   cookieQuery?: string;
   outputDir: string;
-}): Promise<PageData> {
+}): Promise<PageData[]> {
   const urlSlug = url
     .replace(/^https?:\/\//, "")
     .replace(/[^a-zA-Z0-9]/g, "_")
@@ -323,7 +323,8 @@ export async function capturePageData({
     await page.setUserAgent(
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
     );
-    // Set viewport
+
+    // Set viewport with fixed height
     const viewport = {
       width: 1280,
       height: 800,
@@ -341,8 +342,6 @@ export async function capturePageData({
         2
       )}s)`
     );
-
-    // await acceptCookieConsent(page);
 
     // Process page modifications
     if (deleteQueries) {
@@ -383,36 +382,97 @@ export async function capturePageData({
       ),
     }));
 
-    // Take screenshot
-    const screenshotPath = path.join(outputDir, `${urlSlug}.png`);
-    await page.screenshot({
-      path: screenshotPath,
-      fullPage: true,
-    });
-    console.log(`  └─ 📸 Screenshot saved: ${screenshotPath}`);
-
-    // Capture interactive elements
-    const elementsStart = performance.now();
-    const elements = await captureInteractiveElements(page);
+    // Calculate number of segments needed
+    const segmentHeight = viewport.height;
+    const numSegments = Math.ceil(dimensions.pageHeight / segmentHeight);
     console.log(
-      `  └─ 🔍 Found ${elements.length} interactive elements (${(
-        (performance.now() - elementsStart) /
-        1000
-      ).toFixed(2)}s)`
+      `  └─ 📏 Page height: ${dimensions.pageHeight}px, splitting into ${numSegments} segments`
     );
 
-    await page.close();
-    const id = getUrlId(url);
+    // Array to store PageData objects for each segment
+    const pageDataResults: PageData[] = [];
+    const baseId = getUrlId(url);
 
-    return {
-      url,
-      id,
-      viewport,
-      pageHeight: dimensions.pageHeight,
-      pageWidth: dimensions.pageWidth,
-      screenshotPath: `${urlSlug}.png`,
-      elements,
-    };
+    // Capture each segment
+    for (let i = 0; i < numSegments; i++) {
+      const scrollPosition = i * segmentHeight;
+      const segmentIndex = i + 1;
+
+      // Scroll to position
+      await page.evaluate((scrollY) => {
+        window.scrollTo(0, scrollY);
+      }, scrollPosition);
+
+      await page.evaluate(
+        () => new Promise((resolve) => setTimeout(resolve, 1000))
+      );
+
+      // Take screenshot of current viewport
+      const screenshotFilename = `${urlSlug}_segment_${segmentIndex}.png`;
+      const segmentPath = path.join(outputDir, screenshotFilename);
+      await page.screenshot({
+        path: segmentPath,
+        fullPage: false,
+        type: "jpeg",
+        quality: 80,
+      });
+
+      console.log(
+        `  └─ 📸 Segment ${segmentIndex}/${numSegments} screenshot saved`
+      );
+
+      // Capture interactive elements in current viewport
+      const elementsStart = performance.now();
+      const visibleElements = await captureInteractiveElements(page);
+
+      // Process elements for this segment
+      const segmentElements = visibleElements.map((element) => ({
+        ...element,
+        boundingBox: {
+          ...element.boundingBox,
+          y: element.boundingBox.y - scrollPosition,
+        },
+      }));
+
+      console.log(
+        `  └─ 🔍 Found ${
+          segmentElements.length
+        } elements in segment ${segmentIndex} (${(
+          (performance.now() - elementsStart) /
+          1000
+        ).toFixed(2)}s)`
+      );
+
+      // Create segment-specific ID
+      const segmentId = `${baseId}_segment_${segmentIndex}`;
+
+      // Create PageData object for this segment
+      const segmentPageData: PageData = {
+        url,
+        id: segmentId,
+        viewport,
+        pageHeight: dimensions.pageHeight,
+        pageWidth: dimensions.pageWidth,
+        screenshotPath: screenshotFilename,
+        elements: segmentElements,
+      };
+
+      // Save this segment's data to JSON
+      const jsonPath = path.join(outputDir, `${segmentId}.json`);
+      await fs.writeFile(jsonPath, JSON.stringify(segmentPageData, null, 2));
+      console.log(
+        `  └─ 💾 Data saved for segment ${segmentIndex}: ${path.basename(
+          jsonPath
+        )}`
+      );
+
+      // Add to results array
+      pageDataResults.push(segmentPageData);
+    }
+
+    await page.close();
+
+    return pageDataResults;
   } catch (error) {
     console.error(`  └─ ❌ Error processing ${url}:`, error);
     throw error;

@@ -11,7 +11,7 @@ async function acceptCookieConsent(
   page: Page,
   timeout: number = 1000
 ): Promise<boolean> {
-  console.log(`  └─ 🍪 Checking for cookie consent...`);
+  console.log(`  └─ 🍪 Checking for common cookie consent...`);
 
   // Common cookie consent button selectors
   const selectors: string[] = [
@@ -47,35 +47,34 @@ async function acceptCookieConsent(
     ".CybotCookiebotDialogBodyButton",
     ".eu-cookie-compliance-default-button",
     '[aria-label="Allow all cookies"]',
+    '[aria-label*="cookie"]',
   ];
 
   try {
-    // Try each selector until one works
-    for (const selector of selectors) {
-      try {
-        // Wait for selector with a short timeout
-        const button = await page.waitForSelector(selector, { timeout });
-
-        if (button) {
-          // Click the button and wait a moment
-          await button.click();
-          // Use this instead of waitForTimeout
-          await page.evaluate(
-            () => new Promise((resolve) => setTimeout(resolve, 500))
-          );
-          console.log(
-            `    └─ ✅ Accepted cookies (${selector.slice(0, 30)}${
-              selector.length > 30 ? "..." : ""
-            })`
-          );
-          return true;
+    // Fast check if any selectors exist without waiting
+    const buttonSelector = await page.evaluate((selectors) => {
+      for (const selector of selectors) {
+        const element = document.querySelector(selector);
+        if (element && element.isConnected) {
+          return selector;
         }
-      } catch (e) {
-        // This selector wasn't found - continue to next one
       }
+      return null;
+    }, selectors);
+
+    if (buttonSelector) {
+      await page.click(buttonSelector);
+      await page.evaluate(
+        () => new Promise((resolve) => setTimeout(resolve, 500))
+      );
+      console.log(
+        `    └─ ✅ Accepted cookies (${buttonSelector.slice(0, 30)}${
+          buttonSelector.length > 30 ? "..." : ""
+        })`
+      );
+      return true;
     }
 
-    // If execution reaches here, no selectors were found
     console.log(`    └─ ℹ️ No cookie banner detected`);
     return false;
   } catch (error) {
@@ -292,18 +291,16 @@ export async function capturePageData({
   url,
   deleteQueries,
   outputDir,
+  imagesDir,
   cookieQuery,
 }: {
   url: string;
   deleteQueries?: string[];
   cookieQuery?: string;
   outputDir: string;
+  imagesDir: string;
 }): Promise<PageData[]> {
-  const urlSlug = url
-    .replace(/^https?:\/\//, "")
-    .replace(/[^a-zA-Z0-9]/g, "_")
-    .substring(0, 50);
-
+  const id = getUrlId(url);
   console.log(`🔄 Processing: ${url}`);
 
   puppeteer.use(StealthPlugin());
@@ -327,7 +324,7 @@ export async function capturePageData({
     // Set viewport with fixed height
     const viewport = {
       width: 1280,
-      height: 800,
+      height: 800 * 2,
     };
     await page.setViewport(viewport);
 
@@ -342,13 +339,20 @@ export async function capturePageData({
         2
       )}s)`
     );
+    await acceptCookieConsent(page);
 
     // Process page modifications
     if (deleteQueries) {
-      await page.evaluate((selector) => {
-        const elements = document.querySelectorAll(selector.join(" "));
-        elements.forEach((element) => element.remove());
+      await page.evaluate((selectors) => {
+        // Process each selector independently
+        for (const selector of selectors) {
+          const elements = document.querySelectorAll(selector);
+          elements.forEach((element) => {
+            element.remove();
+          });
+        }
       }, deleteQueries);
+
       console.log(`  └─ 🗑️ Removed ${deleteQueries.length} element types`);
     }
 
@@ -383,7 +387,7 @@ export async function capturePageData({
     }));
 
     // Calculate number of segments needed
-    const segmentHeight = viewport.height;
+    const segmentHeight = 800;
     const numSegments = Math.ceil(dimensions.pageHeight / segmentHeight);
     console.log(
       `  └─ 📏 Page height: ${dimensions.pageHeight}px, splitting into ${numSegments} segments`
@@ -393,8 +397,16 @@ export async function capturePageData({
     const pageDataResults: PageData[] = [];
     const baseId = getUrlId(url);
 
-    // Capture each segment
-    for (let i = 0; i < numSegments; i++) {
+    // We store a full screenshot for context
+    await page.screenshot({
+      path: path.join(imagesDir, `${id}.jpeg`),
+      fullPage: true,
+      type: "jpeg",
+      quality: 80,
+    });
+
+    // Capture each segment, max 12 segments per page
+    for (let i = 0; i < Math.min(numSegments, 12); i++) {
       const scrollPosition = i * segmentHeight;
       const segmentIndex = i + 1;
 
@@ -408,12 +420,14 @@ export async function capturePageData({
       );
 
       // Take screenshot of current viewport
-      const screenshotFilename = `${urlSlug}_segment_${segmentIndex}.png`;
-      const segmentPath = path.join(outputDir, screenshotFilename);
+      const screenshotFilename = `${id}_segment_${segmentIndex}.jpeg`;
+      const segmentPath = path.join(imagesDir, screenshotFilename);
+
       await page.screenshot({
         path: segmentPath,
         fullPage: false,
         type: "jpeg",
+        clip: { x: 0, y: 800 * i, height: 800, width: 1280 },
         quality: 80,
       });
 
@@ -426,13 +440,17 @@ export async function capturePageData({
       const visibleElements = await captureInteractiveElements(page);
 
       // Process elements for this segment
-      const segmentElements = visibleElements.map((element) => ({
+      let segmentElements = visibleElements.map((element) => ({
         ...element,
         boundingBox: {
           ...element.boundingBox,
           y: element.boundingBox.y - scrollPosition,
         },
       }));
+
+      segmentElements = segmentElements.filter(
+        ({ boundingBox }) => boundingBox.y <= 800
+      );
 
       console.log(
         `  └─ 🔍 Found ${
@@ -450,10 +468,9 @@ export async function capturePageData({
       const segmentPageData: PageData = {
         url,
         id: segmentId,
-        viewport,
-        pageHeight: dimensions.pageHeight,
-        pageWidth: dimensions.pageWidth,
-        screenshotPath: screenshotFilename,
+        viewport: { ...viewport, height: viewport.height / 2 },
+        page: { height: dimensions.pageHeight, width: dimensions.pageWidth },
+        screenshotPath: `images/${screenshotFilename}`,
         elements: segmentElements,
       };
 

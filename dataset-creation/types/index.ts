@@ -22,8 +22,7 @@ export interface PageData {
     width: number;
     height: number;
   };
-  pageHeight: number;
-  pageWidth: number;
+  page: { height: number; width: number };
   screenshotPath: string;
   elements: InteractiveElement[];
 }
@@ -34,14 +33,40 @@ export interface Config {
 
 export type WebsitesConfig = {
   name: string;
-  pages: [
-    {
-      domain: string;
-      urls: string[];
-      preprocessing?: {
-        deleteQueries?: string[];
-        cookieQuery?: string;
-      };
-    }
-  ];
+  pages: {
+    domain: string;
+    urls: string[];
+    preprocessing?: {
+      deleteQueries?: string[];
+      cookieQuery?: string;
+    };
+  }[];
 }[];
+
+export interface CocoDataset {
+  images: CocoImage[];
+  annotations: CocoAnnotation[];
+  categories: CocoCategory[];
+}
+
+export interface CocoImage {
+  id: number;
+  width: number;
+  height: number;
+  file_name: string;
+}
+
+export interface CocoAnnotation {
+  id: number;
+  image_id: number;
+  category_id: number;
+  bbox: [number, number, number, number]; // [x, y, width, height]
+  area?: number; // Can be computed from bbox if not provided
+  iscrowd?: 0 | 1; // Optional flag (0 for individual objects, 1 for groups)
+}
+
+export interface CocoCategory {
+  id: number;
+  name: string;
+  supercategory?: string;
+}

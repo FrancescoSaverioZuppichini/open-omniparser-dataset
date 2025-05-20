@@ -531,7 +531,10 @@
           "https://www.youtube.com/news",
           "https://www.youtube.com/premium",
           "https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDQMgEzdN5RuCXE&start_radio=1"
-        ]
+        ],
+        "preprocessing": {
+          "cookieQuery": "[aria-label=\"Accept the use of cookies and other data for the purposes described\"]"
+        }
       },
       {
         "domain": "twitch.tv",

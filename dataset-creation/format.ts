@@ -10,6 +10,7 @@ import fs from "fs/promises";
 import path from "path";
 
 const DATASET_DIR = process.env.DATASET_DIR ?? "../dataset";
+const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
 const IMAGES_DATASET_DIR = path.join(DATASET_DIR, "/images");
 const COCO_DATASET_DIR = path.join(DATASET_DIR, "/coco");
 
@@ -42,9 +43,9 @@ async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
 
     const image: CocoImage = {
       id: i,
-      width: pageData.page.width,
-      height: pageData.page.height,
-      file_name: pageData.screenshotPath,
+      width: pageData.viewport.width,
+      height: pageData.viewport.height,
+      file_name: path.basename(pageData.screenshotPath),
     };
 
     images.push(image);
@@ -53,13 +54,20 @@ async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
     );
 
     const elements = pageData.elements.filter(
-      (el) =>
-        el.boundingBox.x >= 0 &&
-        el.boundingBox.y >= 0 &&
-        el.boundingBox.width > 0 &&
-        el.boundingBox.height > 0 &&
-        el.boundingBox.x + el.boundingBox.width <= pageData.page.width &&
-        el.boundingBox.y + el.boundingBox.height <= pageData.page.height
+      (el) => {
+        const bb = el.boundingBox;
+        const area = bb.width * bb.height;
+        
+        return (
+          bb.x >= 0 &&
+          bb.y >= 0 &&
+          bb.width >= 2 &&
+          bb.height >= 2 &&
+          bb.x + bb.width <= pageData.page.width &&
+          bb.y + bb.height <= pageData.page.height &&
+          area >= 4 
+        );
+      }
     );
     for (let j = 0; j < elements.length; j++) {
       const el = elements[j];
@@ -94,7 +102,7 @@ async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
 
 async function main() {
   console.log(`🚀 Starting COCO dataset conversion process`);
-  const dataset = await toCocoDataset(DATASET_DIR, IMAGES_DATASET_DIR);
+  const dataset = await toCocoDataset(WEB_DATASET_DIR, IMAGES_DATASET_DIR);
 
   const jsonPath = path.join(COCO_DATASET_DIR, "coco.json");
   console.log(`  └─ 💾 Writing dataset to: ${jsonPath}`);

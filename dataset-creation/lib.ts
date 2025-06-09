@@ -3,7 +3,7 @@ import { Browser, Page, ElementHandle } from "puppeteer";
 import puppeteer from "puppeteer-extra";
 import fs from "fs/promises";
 import path from "path";
-import type { InteractiveElement, PageData } from "./types";
+import type { Config, InteractiveElement, PageData } from "./types";
 import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import AdblockerPlugin from "puppeteer-extra-plugin-adblocker";
 
@@ -88,7 +88,6 @@ async function captureInteractiveElements(
   // Execute script in the page context to find interactive elements
   return await page.evaluate(() => {
     const interactiveElements: InteractiveElement[] = [];
-
     // Common interactive element selectors
     const selectors = [
       "button",
@@ -124,7 +123,6 @@ async function captureInteractiveElements(
       "*[style*='cursor: pointer']", // Elements with inline pointer cursor
       "[data-toggle]",
     ];
-
     // Find all elements matching our selectors
     let elements = Array.from(document.querySelectorAll(selectors.join(",")));
 
@@ -289,12 +287,14 @@ async function captureInteractiveElements(
 
 export async function capturePageData({
   url,
+  config,
   deleteQueries,
   outputDir,
   imagesDir,
   cookieQuery,
 }: {
   url: string;
+  config: Config;
   deleteQueries?: string[];
   cookieQuery?: string;
   outputDir: string;
@@ -312,9 +312,6 @@ export async function capturePageData({
   });
 
   try {
-    // Create output directory if it doesn't exist
-    await fs.mkdir(outputDir, { recursive: true });
-
     const page: Page = await browser.newPage();
 
     await page.setUserAgent(
@@ -323,8 +320,8 @@ export async function capturePageData({
 
     // Set viewport with fixed height
     const viewport = {
-      width: 1280,
-      height: 800 * 2,
+      width: config.viewport.width,
+      height: config.viewport.height * 2,
     };
     await page.setViewport(viewport);
 
@@ -343,17 +340,21 @@ export async function capturePageData({
 
     // Process page modifications
     if (deleteQueries) {
-      await page.evaluate((selectors) => {
+      let totalDeleteQueries = 0;
+      await page.evaluate((deleteQueries) => {
         // Process each selector independently
-        for (const selector of selectors) {
+        for (const selector of deleteQueries) {
           const elements = document.querySelectorAll(selector);
           elements.forEach((element) => {
             element.remove();
+            totalDeleteQueries++;
           });
         }
       }, deleteQueries);
 
-      console.log(`  └─ 🗑️ Removed ${deleteQueries.length} element types`);
+      console.log(
+        `  └─ 🗑️ Removed ${totalDeleteQueries} element using deleteQueries`
+      );
     }
 
     if (cookieQuery) {
@@ -387,7 +388,7 @@ export async function capturePageData({
     }));
 
     // Calculate number of segments needed
-    const segmentHeight = 800;
+    const segmentHeight = config.viewport.height;
     const numSegments = Math.ceil(dimensions.pageHeight / segmentHeight);
     console.log(
       `  └─ 📏 Page height: ${dimensions.pageHeight}px, splitting into ${numSegments} segments`
@@ -402,7 +403,7 @@ export async function capturePageData({
       path: path.join(imagesDir, `${id}.jpeg`),
       fullPage: true,
       type: "jpeg",
-      quality: 80,
+      quality: config.screenshot.quality,
     });
 
     // Capture each segment, max 12 segments per page
@@ -427,8 +428,13 @@ export async function capturePageData({
         path: segmentPath,
         fullPage: false,
         type: "jpeg",
-        clip: { x: 0, y: 800 * i, height: 800, width: 1280 },
-        quality: 80,
+        clip: {
+          x: 0,
+          y: config.viewport.height * i,
+          height: config.viewport.height,
+          width: config.viewport.width,
+        },
+        quality: config.screenshot.quality,
       });
 
       console.log(

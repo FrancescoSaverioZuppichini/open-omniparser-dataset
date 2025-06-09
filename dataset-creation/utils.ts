@@ -1,12 +1,14 @@
 import * as fs from "fs/promises";
 import * as path from "path";
+import type { Config } from "./types";
 
-const DATASET_DIR = process.env.DATASET_DIR ?? "../dataset";
-const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
-const IMAGES_DATASET_DIR = path.join(DATASET_DIR, "/images");
-const COCO_DATASET_DIR = path.join(DATASET_DIR, "/coco");
+export async function createDirs(config: Config) {
+  const DATA_DIR = process.env.DATA_DIR ?? "../dataset";
+  const DATASET_SLUG = `omniparser-${config.viewport.width}-${config.viewport.height}`;
+  const DATASET_DIR = path.join(DATA_DIR, DATASET_SLUG);
+  const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
+  const IMAGES_DATASET_DIR = path.join(DATASET_DIR, "/images");
 
-export async function createDirs() {
   try {
     try {
       await fs.access(DATASET_DIR);
@@ -25,12 +27,6 @@ export async function createDirs() {
     } catch {
       await fs.mkdir(IMAGES_DATASET_DIR, { recursive: true });
       console.log(`🖼️ Created directory: ${IMAGES_DATASET_DIR}`);
-    }
-    try {
-      await fs.access(COCO_DATASET_DIR);
-    } catch {
-      await fs.mkdir(COCO_DATASET_DIR, { recursive: true });
-      console.log(`🏷️ Created directory: ${COCO_DATASET_DIR}`);
     }
     console.log("✅ All directories are ready!");
   } catch (error) {

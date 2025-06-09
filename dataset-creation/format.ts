@@ -3,16 +3,21 @@ import type {
   CocoCategory,
   CocoDataset,
   CocoImage,
+  Config,
   InteractiveElement,
   PageData,
 } from "./types";
 import fs from "fs/promises";
 import path from "path";
+import configData from "./config.json";
 
-const DATASET_DIR = process.env.DATASET_DIR ?? "../dataset";
+const config: Config = configData;
+
+const DATA_DIR = process.env.DATA_DIR ?? "../dataset";
+const DATASET_SLUG = `omniparser-${config.viewport.width}-${config.viewport.height}`;
+const DATASET_DIR = path.join(DATA_DIR, DATASET_SLUG);
 const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
 const IMAGES_DATASET_DIR = path.join(DATASET_DIR, "/images");
-const COCO_DATASET_DIR = path.join(DATASET_DIR, "/coco");
 
 async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
   console.log(`📂 Starting COCO dataset conversion from: ${webDatasetDir}`);
@@ -53,22 +58,20 @@ async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
       `    └─ 🖼️ Added image: ${image.file_name} (${image.width}x${image.height})`
     );
 
-    const elements = pageData.elements.filter(
-      (el) => {
-        const bb = el.boundingBox;
-        const area = bb.width * bb.height;
-        
-        return (
-          bb.x >= 0 &&
-          bb.y >= 0 &&
-          bb.width >= 2 &&
-          bb.height >= 2 &&
-          bb.x + bb.width <= pageData.page.width &&
-          bb.y + bb.height <= pageData.page.height &&
-          area >= 4 
-        );
-      }
-    );
+    const elements = pageData.elements.filter((el) => {
+      const bb = el.boundingBox;
+      const area = bb.width * bb.height;
+
+      return (
+        bb.x >= 0 &&
+        bb.y >= 0 &&
+        bb.width >= 2 &&
+        bb.height >= 2 &&
+        bb.x + bb.width <= pageData.page.width &&
+        bb.y + bb.height <= pageData.page.height &&
+        area >= 4
+      );
+    });
     for (let j = 0; j < elements.length; j++) {
       const el = elements[j];
       annotations.push({
@@ -104,10 +107,11 @@ async function main() {
   console.log(`🚀 Starting COCO dataset conversion process`);
   const dataset = await toCocoDataset(WEB_DATASET_DIR, IMAGES_DATASET_DIR);
 
-  const jsonPath = path.join(COCO_DATASET_DIR, "coco.json");
+  const jsonPath = path.join(DATASET_DIR, "coco.json");
   console.log(`  └─ 💾 Writing dataset to: ${jsonPath}`);
   await fs.writeFile(jsonPath, JSON.stringify(dataset, null, 2));
   console.log(`  └─ ✅ Conversion complete!`);
+  process.exit(1);
 }
 
 main();

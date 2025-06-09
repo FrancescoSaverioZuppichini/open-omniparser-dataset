@@ -28,7 +28,8 @@ export interface PageData {
 }
 
 export interface Config {
-  selectors: string[];
+  viewport: { height: number; width: number };
+  screenshot: { quality: number };
 }
 
 export type WebsitesConfig = {

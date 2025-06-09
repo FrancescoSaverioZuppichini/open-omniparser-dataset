@@ -1,49 +1,27 @@
 import { capturePageData, getUrlId, saveDataToJson } from "./lib";
 
 import websitesData from "../websites.json";
-import type { WebsitesConfig } from "./types";
+import type { Config, WebsitesConfig } from "./types";
 import fs from "fs/promises";
 import path from "path";
 
 import { createDirs } from "./utils";
+import configData from "./config.json";
 
-const DATASET_DIR = process.env.DATASET_DIR ?? "../dataset";
+const config: Config = configData;
+
+const DATA_DIR = process.env.DATA_DIR ?? "../dataset";
+const DATASET_SLUG = `omniparser-${config.viewport.width}-${config.viewport.height}`;
+const DATASET_DIR = path.join(DATA_DIR, DATASET_SLUG);
 const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
 const IMAGES_DATASET_DIR = path.join(DATASET_DIR, "/images");
 
-const websites = websitesData as unknown as WebsitesConfig;
+const websites: WebsitesConfig = websitesData;
 
-// const websites: WebsitesConfig = [
-//   {
-//     name: "Video Platforms",
-//     pages: [
-//       {
-//         domain: "youtube.com",
-//         urls: [
-//           "https://www.youtube.com/feed/trending",
-//           "https://www.youtube.com/watch?v=VQRLujxTm3c",
-//           "https://www.youtube.com/gaming",
-//           "https://www.youtube.com/results?search_query=durgasoft",
-//           "https://www.youtube.com/music",
-//           "https://www.youtube.com/news",
-//           "https://www.youtube.com/premium",
-//           "https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDQMgEzdN5RuCXE&start_radio=1",
-//         ],
-//         preprocessing: {
-//           cookieQuery: '[aria-label*="cookie"]',
-//         },
-//       },
-//     ],
-//   },
-// ];
-(async () => {
+async function main() {
   const outputDir = WEB_DATASET_DIR;
   const imagesDir = IMAGES_DATASET_DIR;
-  await createDirs();
-  // const url = "https://commoncrawl.org/get-started";
-  // const url = "https://github.com/KwaiVGI/LivePortrait";
-  // const url =
-  //   "https://github.com/KwaiVGI/LivePortrait/commit/6c4a883a9e67330fdecb0982b0c0611d425c8681";
+  await createDirs(config);
 
   for (const category of websites) {
     console.log(`📂 Category: ${category.name}`);
@@ -63,6 +41,7 @@ const websites = websitesData as unknown as WebsitesConfig;
           // Process the page
           await capturePageData({
             url,
+            config,
             deleteQueries: page.preprocessing?.deleteQueries,
             cookieQuery: page.preprocessing?.cookieQuery,
             imagesDir,
@@ -80,4 +59,6 @@ const websites = websitesData as unknown as WebsitesConfig;
     }
   }
   process.exit(1);
-})();
+}
+
+main();

@@ -3,7 +3,7 @@ import * as path from "path";
 import type { Config } from "./types";
 
 export async function createDirs(config: Config) {
-  const DATA_DIR = process.env.DATA_DIR ?? "../dataset";
+  const DATA_DIR = process.env.DATA_DIR ?? "../datasets";
   const DATASET_SLUG = `omniparser-${config.viewport.width}-${config.viewport.height}`;
   const DATASET_DIR = path.join(DATA_DIR, DATASET_SLUG);
   const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");

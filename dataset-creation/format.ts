@@ -13,7 +13,7 @@ import configData from "./config.json";
 
 const config: Config = configData;
 
-const DATA_DIR = process.env.DATA_DIR ?? "../dataset";
+const DATA_DIR = process.env.DATA_DIR ?? "../datasets";
 const DATASET_SLUG = `omniparser-${config.viewport.width}-${config.viewport.height}`;
 const DATASET_DIR = path.join(DATA_DIR, DATASET_SLUG);
 const WEB_DATASET_DIR = path.join(DATASET_DIR, "/web");
@@ -45,6 +45,14 @@ async function toCocoDataset(webDatasetDir: string, imagesDir: string) {
     const start = performance.now();
     const fileContent = await fs.readFile(filePath, "utf-8");
     const pageData: PageData = JSON.parse(fileContent);
+
+    const hasAnnotations = pageData.elements.length > 0
+    if (!hasAnnotations) {
+      console.log(
+        `    └─ 📌️ No annotations found, skipping`
+      );
+      continue
+    }
 
     const image: CocoImage = {
       id: i,

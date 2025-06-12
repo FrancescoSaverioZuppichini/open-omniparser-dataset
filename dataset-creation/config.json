@@ -1,7 +1,7 @@
 {
   "viewport": {
-    "width": 768,
-    "height": 384
+    "width": 1280,
+    "height": 800 
   },
   "screenshot": { "quality": 80 }
 }

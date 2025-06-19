@@ -20,7 +20,9 @@
           "https://www.ebay.com/deals",
           "https://www.ebay.com/e/fashiondeals/mens-watches",
           "https://www.ebay.com/sch/i.html?_nkw=vintage+camera",
-          "https://www.ebay.com/help/selling/selling/start-selling-ebay?id=4081"
+          "https://www.ebay.com/help/selling/selling/start-selling-ebay?id=4081",
+          "https://www.ebay.com/sl/sell",
+          "https://www.ebay.com/b/Nike-Kobe-8-Protro-2025-What-The-Kobe/15709/bn_7124553159?_trkparms=parentrq%3A894977211970a0d5e477d3a6ffff7914%7Cpageci%3Ad94a52aa-4d34-11f0-8e13-7aba2d6d7adf%7Cc%3A3%7Ciid%3A1%7Cli%3A8874"
         ]
       },
       {
@@ -78,6 +80,67 @@
           "https://www.newegg.com/Tools-Accessories/Category/ID-12",
           "https://www.newegg.com/Gaming-Desktops/SubCategory/ID-3742"
         ]
+      },
+      {
+        "domain": "target.com",
+        "urls": [
+          "https://www.target.com/",
+          "https://www.target.com/c/grocery/-/N-5xt1e",
+          "https://www.target.com/c/electronics/-/N-5xtg6",
+          "https://www.target.com/circle",
+          "https://www.target.com/c/valentine-s-day-cards/-/N-4ujol"
+        ]
+      },
+      {
+        "domain": "ikea.com",
+        "urls": [
+          "https://www.ikea.com/us/en/",
+          "https://www.ikea.com/us/en/search/?q=desk",
+          "https://www.ikea.com/us/en/rooms/",
+          "https://www.ikea.com/us/en/planners/",
+          "https://www.ikea.com/us/en/search/?q=kallax"
+        ]
+      },
+      {
+        "domain": "zappos.com",
+        "urls": [
+          "https://www.zappos.com/",
+          "https://www.zappos.com/men-shoes/CK_XARC81wE6ApcPeg.zso",
+          "https://www.zappos.com/c/brands",
+          "https://www.zappos.com/women/wAEB4AEB4gICGBw.zso",
+          "https://www.zappos.com/p/herschel-supply-co-classic-hip-pack-dark-sea/product/9951589/color/111744",
+          "https://www.zappos.com/p/mens-hoka-challenger-8-maple-cardamom/product/10004316/color/1108477"
+        ]
+      },
+      {
+        "domain": "asos.com",
+        "urls": [
+          "https://www.asos.com/men/ctas/hp-edit-16/cat/?cid=52640",
+          "https://www.asos.com/women/dresses/cat/?cid=8799",
+          "https://www.asos.com/search/?q=sneakers",
+          "https://www.asos.com/adidas-originals/adidas-originals-handball-spezial-gum-sole-trainers-in-pink-and-navy/prd/204869245#colourWayId-204869246",
+          "https://www.asos.com/princess-polly/princess-polly-cowboy-boot-crop-tank-top-in-white/prd/207681495#colourWayId-207681504"
+        ]
+      },
+      {
+        "domain": "shein.com",
+        "urls": [
+          "https://us.shein.com/",
+          "https://us.shein.com/RecommendSelection/Women-Clothing-sc-017172961.html?ici=us_tab03navbar03&src_module=topcat&src_identifier=fc%3DWomen%20Clothing%60sc%3DWomen%20Clothing%60tc%3D0%60oc%3D0%60ps%3Dtab03navbar03%60jc%3DitemPicking_017172961&adp=&src_tab_page_id=page_select_class1750354719499&categoryJump=common:280299:shein:us_en:ios_!_0",
+          "https://us.shein.com/cart",
+          "https://us.shein.com/RecommendSelection/Shoes-sc-017172966.html?ici=us_tab08navbar08&src_module=topcat&src_identifier=fc%3DShoes%60sc%3DShoes%60tc%3D0%60oc%3D0%60ps%3Dtab08navbar08%60jc%3DitemPicking_017172966&adp=&src_tab_page_id=page_login1750354733095&categoryJump=common:280872:shein:us_en:ios_!_0",
+          "https://us.shein.com/Women-Baseball-Cap-c-1772.html?ici=us_tab11navbar11menu02dir02&src_module=topcat&src_identifier=fc%3DJewelry%20%26%20Accessories%60sc%3DJewelry%20%26%20Accessories%60tc%3DWomen%20Hats%20%26%20Gloves%60oc%3DBaseball%20Cap%60ps%3Dtab11navbar11menu02dir02%60jc%3Dreal_1772&adp=86163288&src_tab_page_id=page_otherundefined&categoryJump=common:281165:shein:us_en:ios_!_0"
+        ]
+      },
+      {
+        "domain": "costco.com",
+        "urls": [
+          "https://www.costco.com/",
+          "https://www.costco.com/grocery-household.html",
+          "https://www.costco.com/sunglasses.html",
+          "https://www.costco.com/s?keyword=OFF&dept=All",
+          "https://www.costco.com/kirkland-signature-flex-tech-13-gallon-kitchen-trash-bag-200-count.product.4000101524.html"
+        ]
       }
     ]
   },
@@ -101,7 +164,16 @@
           "https://github.com/explore",
           "https://github.com/topics/machine-learning",
           "https://github.com/dotnet/runtime/pull/115380",
-          "https://github.com/docs"
+          "https://github.com/docs",
+          "https://github.com/facebook/react/pulls",
+          "https://github.com/kubernetes/kubernetes/pull/132407",
+          "https://github.com/golang/go/pull/12345",
+          "https://github.com/tensorflow/tensorflow/pull/67890",
+          "https://github.com/microsoft/vscode/pull/54321",
+          "https://github.com/topics/api",
+          "https://github.com/topics/database",
+          "https://github.com/collections/machine-learning",
+          "https://github.com/collections/open-source-organizations"
         ]
       },
       {
@@ -165,6 +237,94 @@
           "https://vercel.com/guides",
           "https://vercel.com/features/edge-functions"
         ]
+      },
+
+      {
+        "domain": "bitbucket.org",
+        "urls": [
+          "https://bitbucket.org/product/features/pipelines",
+          "https://bitbucket.org/blog/",
+          "https://bitbucket.org/product/pricing"
+        ]
+      },
+      {
+        "domain": "hub.docker.com",
+        "urls": [
+          "https://hub.docker.com/",
+          "https://hub.docker.com/search?q=nginx&type=image",
+          "https://hub.docker.com/_/alpine",
+          "https://hub.docker.com/_/redis",
+          "https://hub.docker.com/_/redis/tags"
+        ]
+      },
+      {
+        "domain": "atlassian.com",
+        "urls": [
+          "https://www.atlassian.com/software/jira",
+          "https://www.atlassian.com/software/confluence",
+          "https://id.atlassian.com/login",
+          "https://support.atlassian.com/",
+          "https://marketplace.atlassian.com/"
+        ]
+      },
+      {
+        "domain": "postman.com",
+        "urls": [
+          "https://www.postman.com/product/what-is-postman/",
+          "https://www.postman.com/downloads/",
+          "https://learning.postman.com/docs/getting-started/introduction/",
+          "https://www.postman.com/pricing/",
+          "https://www.postman.com/company/careers/"
+        ]
+      },
+      {
+        "domain": "codesandbox.io",
+        "urls": [
+          "https://codesandbox.io/dashboard/home",
+          "https://codesandbox.io/s/new",
+          "https://codesandbox.io/explore",
+          "https://codesandbox.io/examples/package/codesandbox",
+          "https://codesandbox.io/examples/package/react"
+        ]
+      },
+      {
+        "domain": "glitch.com",
+        "urls": [
+          "https://glitch.com/",
+          "https://glitch.com/edit/#!/new-project",
+          "https://glitch.com/explore",
+          "https://help.glitch.com/",
+          "https://glitch.com/pricing"
+        ]
+      },
+      {
+        "domain": "netlify.com",
+        "urls": [
+          "https://app.netlify.com/",
+          "https://www.netlify.com/pricing/",
+          "https://www.netlify.com/products/",
+          "https://docs.netlify.com/",
+          "https://www.netlify.com/blog/"
+        ]
+      },
+      {
+        "domain": "huggingface.co",
+        "urls": [
+          "https://huggingface.co/models",
+          "https://huggingface.co/datasets",
+          "https://huggingface.co/spaces",
+          "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct",
+          "https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct/discussions",
+          "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
+          "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/tree/main",
+          "https://huggingface.co/openai/whisper-large-v3",
+          "https://huggingface.co/openai/whisper-large-v3/tree/main",
+          "https://huggingface.co/datasets/squad_v2",
+          "https://huggingface.co/spaces/gradio/chatbot-arena",
+          "https://huggingface.co/docs/transformers/index",
+          "https://huggingface.co/tasks/image-generation",
+          "https://huggingface.co/MiniMaxAI/MiniMax-M1-80k/discussions"
+        ]
       }
     ]
   },
@@ -210,24 +370,48 @@
           "https://www.reddit.com/r/askscience/"
         ]
       },
+
+      {
+        "domain": "tumblr.com",
+        "urls": [
+          "https://www.tumblr.com/explore/trending",
+          "https://www.tumblr.com/communities/browse/anime",
+          "https://www.tumblr.com/search/cats",
+          "https://www.tumblr.com/communities/browse/artists%20on%20tumblr",
+          "https://www.tumblr.com/communities/anime-mexico-w"
+        ]
+      },
+      {
+        "domain": "threads.net",
+        "urls": [
+          "https://www.threads.net/",
+          "https://www.threads.com/@thescore",
+          "https://www.threads.com/@edmund_vinyl/replies",
+          "https://www.threads.com/@el0n_rev_musk",
+          "https://www.threads.com/@el0n_rev_musk/replies",
+          "https://www.threads.net/@zuck"
+        ],
+        "preprocessing": {
+          "cookieQuery": "button.x1i10hfl.xe8uvvx.x1ja2u2z.x15x72sd"
+        }
+      },
+      {
+        "domain": "mastodon.social",
+        "urls": [
+          "https://mastodon.social/explore",
+          "https://mastodon.social/public/local",
+          "https://mastodon.social/settings/profile",
+          "https://mastodon.social/auth/sign_up",
+          "https://mastodon.social/about"
+        ]
+      },
       {
         "domain": "linkedin.com",
         "urls": [
           "https://www.linkedin.com/jobs/",
-          "https://www.linkedin.com/feed/news/",
           "https://www.linkedin.com/learning/",
           "https://www.linkedin.com/groups/",
           "https://www.linkedin.com/pulse/topics/"
-        ]
-      },
-      {
-        "domain": "instagram.com",
-        "urls": [
-          "https://www.instagram.com/explore/",
-          "https://www.instagram.com/explore/tags/technology/",
-          "https://www.instagram.com/explore/tags/photography/",
-          "https://www.instagram.com/explore/tags/travel/",
-          "https://www.instagram.com/explore/tags/food/"
         ]
       },
       {
@@ -382,6 +566,57 @@
           "https://www.wired.com/category/science/",
           "https://www.wired.com/category/security/"
         ]
+      },
+
+      {
+        "domain": "smashingmagazine.com",
+        "urls": [
+          "https://www.smashingmagazine.com/",
+          "https://www.smashingmagazine.com/articles/",
+          "https://www.smashingmagazine.com/category/css",
+          "https://www.smashingmagazine.com/search/?q=javascript",
+          "https://www.smashingmagazine.com/books/"
+        ]
+      },
+      {
+        "domain": "engadget.com",
+        "urls": [
+          "https://www.engadget.com/",
+          "https://www.engadget.com/reviews/",
+          "https://www.engadget.com/gaming/",
+          "https://www.engadget.com/topic/deals/",
+          "https://www.engadget.com/about/contact/"
+        ]
+      },
+      {
+        "domain": "polygon.com",
+        "urls": [
+          "https://www.polygon.com/",
+          "https://www.polygon.com/reviews",
+          "https://www.polygon.com/guides",
+          "https://www.polygon.com/search?q=zelda",
+          "https://www.polygon.com/deals"
+        ]
+      },
+      {
+        "domain": "boingboing.net",
+        "urls": [
+          "https://boingboing.net/",
+          "https://boingboing.net/category/features",
+          "https://boingboing.net/tag/ai",
+          "https://boingboing.net/search?q=cats",
+          "https://boingboing.net/shop"
+        ]
+      },
+      {
+        "domain": "copyblogger.com",
+        "urls": [
+          "https://copyblogger.com/blog/",
+          "https://copyblogger.com/category/content-marketing/",
+          "https://copyblogger.com/resources/",
+          "https://copyblogger.com/search?query=seo",
+          "https://copyblogger.com/contact/"
+        ]
       }
     ]
   },
@@ -530,7 +765,10 @@
           "https://www.youtube.com/music",
           "https://www.youtube.com/news",
           "https://www.youtube.com/premium",
-          "https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDQMgEzdN5RuCXE&start_radio=1"
+          "https://www.youtube.com/watch?v=XXYlFuWEuKI&list=RDQMgEzdN5RuCXE&start_radio=1",
+          "https://www.youtube.com/watch?v=I9KJRXjqKAI",
+          "https://www.youtube.com/watch?v=RZs5Hz1klno",
+          "https://www.youtube.com/watch?v=JQeDDqhye-s"
         ],
         "preprocessing": {
           "cookieQuery": "[aria-label=\"Accept the use of cookies and other data for the purposes described\"]"

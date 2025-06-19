@@ -13,7 +13,7 @@ def generate_random_color():
     return (r, g, b)
 
 
-def visualize_bounding_boxes(base_filename, dataset_dir="../dataset"):
+def visualize_bounding_boxes(base_filename, dataset_dir="../dataset", save_image=True):
     """
     Load the screenshot and JSON data, then draw bounding boxes for each element.
 
@@ -22,7 +22,7 @@ def visualize_bounding_boxes(base_filename, dataset_dir="../dataset"):
         dataset_dir: Directory containing the files
     """
     # Construct file paths
-    json_path = os.path.join(dataset_dir, f"{base_filename}.json")
+    json_path = os.path.join(dataset_dir, "web", f"{base_filename}")
 
     # Load JSON data
     try:
@@ -94,12 +94,13 @@ def visualize_bounding_boxes(base_filename, dataset_dir="../dataset"):
         # Draw label text
         draw.text((x + 2, y - text_height - 2), label, fill=color, font=font)
 
-    # Save the result
-    output_path = os.path.join(dataset_dir, f"{base_filename}_debug.png")
-    img_with_boxes.save(output_path)
-    print(f"Debug visualization saved to: {output_path}")
+    if save_image:
+        output_path = os.path.join(dataset_dir, f"{base_filename}_debug.png")
+        img_with_boxes.save(output_path)
+        print(f"Debug visualization saved to: {output_path}")
 
-    return output_path
+        return output_path
+    return img_with_boxes
 
 
 if __name__ == "__main__":
@@ -108,17 +109,14 @@ if __name__ == "__main__":
         description="Visualize interactive elements from dataset"
     )
     parser.add_argument(
-        "base_filename",
-        help="Base filename of the JSON to visualize (without extension)",
-    )
-    parser.add_argument(
-        "--dataset-dir",
-        "-d",
-        default="./dataset",
-        help="Path to the dataset directory (default: ./dataset)",
+        "file_path",
+        help="Annotation file path",
     )
 
     args = parser.parse_args()
 
+    base_filename = os.path.basename(args.file_path)
+    dataset_dir = os.path.dirname(os.path.dirname(args.file_path))
+    print(f"filename={base_filename}, dataset_dir={dataset_dir}")
     # Run visualization with the provided arguments
-    visualize_bounding_boxes(args.base_filename, args.dataset_dir)
+    visualize_bounding_boxes(base_filename, dataset_dir)

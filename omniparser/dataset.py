@@ -1,46 +1,12 @@
-from os import path
-from pathlib import Path
+import torch
+from torchvision import tv_tensors
 from torch.utils.data import Dataset
-import ujson
-from torchvision.io import read_image
 
 
 class OmniparserDataset(Dataset):
-    def __init__(self, dataset, image_processor, transform=None):
+    def __init__(self, dataset, transform=None):
         self.dataset = dataset
         self.transform = transform
-
-    @staticmethod
-    def format_image_annotations_as_coco(image_id, categories, boxes):
-        """Format one set of image annotations to the COCO format
-
-        Args:
-            image_id (str): image id. e.g. "0001"
-            categories (List[int]): list of categories/class labels corresponding to provided bounding boxes
-            boxes (List[Tuple[float]]): list of bounding boxes provided in COCO format
-                ([center_x, center_y, width, height] in absolute coordinates)
-
-        Returns:
-            dict: {
-                "image_id": image id,
-                "annotations": list of formatted annotations
-            }
-        """
-        annotations = []
-        for category, bbox in zip(categories, boxes):
-            formatted_annotation = {
-                "image_id": image_id,
-                "category_id": category,
-                "bbox": list(bbox),
-                "iscrowd": 0,
-                "area": bbox[2] * bbox[3],
-            }
-            annotations.append(formatted_annotation)
-
-        return {
-            "image_id": image_id,
-            "annotations": annotations,
-        }
 
     def __len__(self):
         return len(self.dataset)
@@ -53,48 +19,39 @@ class OmniparserDataset(Dataset):
         boxes = sample["objects"]["bbox"]
         categories = sample["objects"]["category"]
 
-        # Apply augmentations
+        class_labels = torch.tensor(categories, dtype=torch.int64)
+        iscrowd = torch.zeros_like(class_labels)
+        if len(boxes) == 0:
+            boxes = torch.empty((0, 4), dtype=torch.float16)
         if self.transform:
-            transformed = self.transform(image=image, bboxes=boxes, category=categories)
-            image = transformed["image"]
-            boxes = transformed["bboxes"]
-            categories = transformed["category"]
+            boxes = tv_tensors.BoundingBoxes(
+                boxes,
+                format="XYWH",
+                canvas_size=(sample["height"], sample["width"]),
+                dtype=torch.float16,
+            )
+            transformed = self.transform(image, boxes, class_labels)
+            image, boxes, class_labels = transformed
+        if isinstance(boxes, tv_tensors.BoundingBoxes):
+            boxes = boxes.data
+        else:
+            boxes = torch.tensor(boxes, dtype=torch.float16)
+        # fuck hf not telling they need fucking Yolo piece of shit fucking shit format
+        boxes[:, 0] = boxes[:, 0] + boxes[:, 2] / 2
+        boxes[:, 1] = boxes[:, 1] + boxes[:, 3] / 2
 
-        # Format annotations in COCO format for image_processor
-        formatted_annotations = self.format_image_annotations_as_coco(
-            image_id, categories, boxes
-        )
+        _, height, width = image.shape
+        boxes = boxes / torch.tensor([width, height, width, height])
+        area = boxes[:, 2] * boxes[:, 3]
+        size = torch.tensor([height, width])
 
-        # Apply the image processor transformations: resizing, rescaling, normalization
-        result = self.image_processor(
-            images=image, annotations=formatted_annotations, return_tensors="pt"
-        )
+        labels = {
+            "class_labels": class_labels,
+            "boxes": boxes,
+            "area": area,
+            "size": size,
+            "iscrowd": iscrowd,
+            "image_id": torch.tensor([image_id]),
+        }
 
-        # Image processor expands batch dimension, lets squeeze it
-        result = {k: v[0] for k, v in result.items()}
-
-        return result
-
-
-if __name__ == "__main__":
-    from datasets import load_dataset
-
-    dataset = load_dataset("Francesco/open-omniparser-dataset", cache_dir="data/")
-
-    if "validation" not in dataset:
-        split = dataset["train"].train_test_split(0.10, seed=1337)
-        dataset["train"] = split["train"]
-        dataset["validation"] = split["test"]
-
-    train_dataset = OmniparserDataset(
-        dataset["train"],
-        image_processor,
-    )
-    validation_dataset = OmniparserDataset(
-        dataset["validation"],
-        image_processor,
-    )
-    test_dataset = OmniparserDataset(
-        dataset["test"],
-        image_processor,
-    )
+        return {"pixel_values": image, "labels": labels}

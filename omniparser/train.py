@@ -5,11 +5,13 @@ import torch
 from comet_ml import start
 from comet_ml.integration.pytorch import log_model
 from datasets import load_dataset
+from PIL import Image, ImageDraw
 from torchvision.transforms import v2
 from transformers import (
     AutoImageProcessor,
     AutoModelForObjectDetection,
     Trainer,
+    TrainerCallback,
     TrainingArguments,
 )
 
@@ -26,6 +28,80 @@ def collate_fn(batch):
     data["pixel_values"] = torch.stack([x["pixel_values"] for x in batch])
     data["labels"] = [x["labels"] for x in batch]
     return data
+
+
+def log_validation_images_to_comet(
+    experiment,
+    model,
+    validation_dataset,
+    image_processor,
+    step: int,
+    num_images=8,
+    threshold=0.4,
+):
+    """Log validation images with predictions to Comet ML"""
+    model.eval()
+    device = next(model.parameters()).device
+
+    # Always use the same first N images for consistency
+    indices = list(range(0, num_images))
+
+    for i, idx in enumerate(indices):
+        try:
+            # Get original image
+            original_image = validation_dataset.dataset[idx]["image"]
+
+            # Get processed sample
+            sample = validation_dataset[idx]
+            pixel_values = sample["pixel_values"].unsqueeze(0).to(device)
+
+            # Run inference
+            with torch.no_grad():
+                outputs = model(pixel_values=pixel_values)
+
+            # Post-process
+            target_sizes = torch.tensor([original_image.size[::-1]])
+            results = image_processor.post_process_object_detection(
+                outputs, threshold=threshold, target_sizes=target_sizes
+            )[0]
+
+            # Draw boxes on original image
+            image_with_boxes = original_image.copy()
+            draw = ImageDraw.Draw(image_with_boxes)
+
+            for score, label, box in zip(
+                results["scores"], results["labels"], results["boxes"]
+            ):
+                x1, y1, x2, y2 = box.tolist()
+                draw.rectangle((x1, y1, x2, y2), outline="red", width=3)
+                label_name = model.config.id2label[label.item()]
+                draw.text((x1, y1 - 20), f"{label_name} {score:.2f}", fill="red")
+
+            experiment.log_image(
+                image_with_boxes, name=f"val_pred_{idx}_step={step}_th={threshold}"
+            )
+
+        except Exception as e:
+            print(f"Failed logging image {idx}: {e}")
+
+
+class CometImageLogger(TrainerCallback):
+    def __init__(self, experiment, validation_dataset, image_processor):
+        self.experiment = experiment
+        self.validation_dataset = validation_dataset
+        self.image_processor = image_processor
+
+    def on_evaluate(self, args, state, control, model=None, **kwargs):
+        if state.global_step % 5 == 0:
+            log_validation_images_to_comet(
+                self.experiment,
+                model,
+                self.validation_dataset,
+                self.image_processor,
+                state.global_step,
+                num_images=8,
+                threshold=0.4,
+            )
 
 
 if __name__ == "__main__":
@@ -112,4 +188,7 @@ if __name__ == "__main__":
         compute_metrics=eval_compute_metrics_fn,
     )
 
+    trainer.add_callback(
+        CometImageLogger(experiment, validation_dataset, image_processor)
+    )
     trainer.train()

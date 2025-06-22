@@ -7,10 +7,6 @@ import torch
 from datasets import load_dataset
 from IPython.display import clear_output, display
 from PIL import Image, ImageDraw
-from torchmetrics.detection.mean_ap import MeanAveragePrecision
-from torchvision.transforms import v2
-from transformers import AutoModelForObjectDetection
-from transformers.image_transforms import center_to_corners_format
 
 
 def visualize_detection(
